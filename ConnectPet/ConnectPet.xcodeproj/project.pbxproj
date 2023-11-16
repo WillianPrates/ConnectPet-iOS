@@ -51,6 +51,7 @@
 		EF5BF3E92B06653600520E25 /* ConnectPet */ = {
 			isa = PBXGroup;
 			children = (
+				EF5BF3F92B06B01C00520E25 /* Flow */,
 				EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */,
 				EF5BF3EC2B06653600520E25 /* ContentView.swift */,
 				EF5BF3EE2B06653800520E25 /* Assets.xcassets */,
@@ -65,6 +66,61 @@
 				EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF5BF3F92B06B01C00520E25 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				EF5BF3FF2B06B09400520E25 /* CadastroPet */,
+				EF5BF3FE2B06B08400520E25 /* PerfilPet */,
+				EF5BF3FD2B06B06F00520E25 /* Perfil */,
+				EF5BF3FC2B06B05900520E25 /* Feed */,
+				EF5BF3FB2B06B03400520E25 /* ListaPets */,
+				EF5BF3FA2B06B02500520E25 /* TabBar */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		EF5BF3FA2B06B02500520E25 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EF5BF3FB2B06B03400520E25 /* ListaPets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListaPets;
+			sourceTree = "<group>";
+		};
+		EF5BF3FC2B06B05900520E25 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		EF5BF3FD2B06B06F00520E25 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
+		EF5BF3FE2B06B08400520E25 /* PerfilPet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PerfilPet;
+			sourceTree = "<group>";
+		};
+		EF5BF3FF2B06B09400520E25 /* CadastroPet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CadastroPet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
