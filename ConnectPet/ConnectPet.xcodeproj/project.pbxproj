@@ -11,12 +11,8 @@
 		EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EC2B06653600520E25 /* ContentView.swift */; };
 		EF5BF3EF2B06653800520E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3EE2B06653800520E25 /* Assets.xcassets */; };
 		EF5BF3F22B06653800520E25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */; };
-		EF5BF4022B079D4200520E25 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF4012B079D4200520E25 /* UserDefaultManager.swift */; };
-		EF5BF4052B07B19900520E25 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF4042B07B19900520E25 /* Pet.swift */; };
-		EF5BF4072B07B1CB00520E25 /* Vacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF4062B07B1CB00520E25 /* Vacina.swift */; };
-		EF5BF4092B07B1F300520E25 /* Exame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF4082B07B1F300520E25 /* Exame.swift */; };
-		EF5BF40B2B07B21200520E25 /* Consulta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF40A2B07B21200520E25 /* Consulta.swift */; };
-		EF5BF40D2B07B22F00520E25 /* Vermifugo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF40C2B07B22F00520E25 /* Vermifugo.swift */; };
+		EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */; };
+		EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC11862B0CFC0300353DEB /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +21,8 @@
 		EF5BF3EC2B06653600520E25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF5BF3EE2B06653800520E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF5BF4012B079D4200520E25 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
-		EF5BF4042B07B19900520E25 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		EF5BF4062B07B1CB00520E25 /* Vacina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacina.swift; sourceTree = "<group>"; };
-		EF5BF4082B07B1F300520E25 /* Exame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exame.swift; sourceTree = "<group>"; };
-		EF5BF40A2B07B21200520E25 /* Consulta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consulta.swift; sourceTree = "<group>"; };
-		EF5BF40C2B07B22F00520E25 /* Vermifugo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vermifugo.swift; sourceTree = "<group>"; };
+		EFCC11802B0CF9D100353DEB /* ConnectPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConnectPet.xcdatamodel; sourceTree = "<group>"; };
+		EFCC11862B0CFC0300353DEB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +59,7 @@
 				EF5BF3F92B06B01C00520E25 /* Flow */,
 				EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */,
 				EF5BF3EC2B06653600520E25 /* ContentView.swift */,
+				EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */,
 				EF5BF3EE2B06653800520E25 /* Assets.xcassets */,
 				EF5BF3F02B06653800520E25 /* Preview Content */,
 			);
@@ -139,20 +132,15 @@
 		EF5BF4002B079CFD00520E25 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				EF5BF4032B07B18900520E25 /* Model */,
-				EF5BF4012B079D4200520E25 /* UserDefaultManager.swift */,
+				EFCC11862B0CFC0300353DEB /* Persistence.swift */,
+				EF5BF4292B0CEE2200520E25 /* Model */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		EF5BF4032B07B18900520E25 /* Model */ = {
+		EF5BF4292B0CEE2200520E25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF5BF4042B07B19900520E25 /* Pet.swift */,
-				EF5BF4062B07B1CB00520E25 /* Vacina.swift */,
-				EF5BF4082B07B1F300520E25 /* Exame.swift */,
-				EF5BF40A2B07B21200520E25 /* Consulta.swift */,
-				EF5BF40C2B07B22F00520E25 /* Vermifugo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,13 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5BF4092B07B1F300520E25 /* Exame.swift in Sources */,
-				EF5BF40B2B07B21200520E25 /* Consulta.swift in Sources */,
-				EF5BF4022B079D4200520E25 /* UserDefaultManager.swift in Sources */,
-				EF5BF4052B07B19900520E25 /* Pet.swift in Sources */,
+				EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */,
+				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
 				EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */,
-				EF5BF4072B07B1CB00520E25 /* Vacina.swift in Sources */,
-				EF5BF40D2B07B22F00520E25 /* Vermifugo.swift in Sources */,
 				EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +422,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EFCC11802B0CF9D100353DEB /* ConnectPet.xcdatamodel */,
+			);
+			currentVersion = EFCC11802B0CF9D100353DEB /* ConnectPet.xcdatamodel */;
+			path = ConnectPet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EF5BF3DF2B06653600520E25 /* Project object */;
 }
