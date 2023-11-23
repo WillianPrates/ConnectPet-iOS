@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */; };
 		EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */; };
 		EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EC2B06653600520E25 /* ContentView.swift */; };
 		EF5BF3EF2B06653800520E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3EE2B06653800520E25 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilPetView.swift; path = ConnectPet/Flow/BoasVindas/PerfilPetView.swift; sourceTree = SOURCE_ROOT; };
 		EF5BF3E72B06653600520E25 /* ConnectPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPetApp.swift; sourceTree = "<group>"; };
 		EF5BF3EC2B06653600520E25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		EF5BF3FE2B06B08400520E25 /* PerfilPet */ = {
 			isa = PBXGroup;
 			children = (
+				CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */,
 			);
 			path = PerfilPet;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */,
+				CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */,
 				EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */,
 				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
 				EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */,
@@ -360,6 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ConnectPet/Preview Content\"";
+				DEVELOPMENT_TEAM = VGFW952459;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -388,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ConnectPet/Preview Content\"";
+				DEVELOPMENT_TEAM = VGFW952459;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
