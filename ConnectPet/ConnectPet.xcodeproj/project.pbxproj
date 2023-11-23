@@ -12,6 +12,8 @@
 		EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EC2B06653600520E25 /* ContentView.swift */; };
 		EF5BF3EF2B06653800520E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3EE2B06653800520E25 /* Assets.xcassets */; };
 		EF5BF3F22B06653800520E25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */; };
+		EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC5BBF32B0F8FDE0090D18A /* CadastroPetView.swift */; };
+		EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC5BBF52B0F8FEA0090D18A /* CadastroPetViewModel.swift */; };
 		EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */; };
 		EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC11862B0CFC0300353DEB /* Persistence.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +25,8 @@
 		EF5BF3EC2B06653600520E25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF5BF3EE2B06653800520E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFC5BBF32B0F8FDE0090D18A /* CadastroPetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroPetView.swift; sourceTree = "<group>"; };
+		EFC5BBF52B0F8FEA0090D18A /* CadastroPetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroPetViewModel.swift; sourceTree = "<group>"; };
 		EFCC11802B0CF9D100353DEB /* ConnectPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConnectPet.xcdatamodel; sourceTree = "<group>"; };
 		EFCC11862B0CFC0300353DEB /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +132,8 @@
 		EF5BF3FF2B06B09400520E25 /* CadastroPet */ = {
 			isa = PBXGroup;
 			children = (
+				EFC5BBF52B0F8FEA0090D18A /* CadastroPetViewModel.swift */,
+				EFC5BBF32B0F8FDE0090D18A /* CadastroPetView.swift */,
 			);
 			path = CadastroPet;
 			sourceTree = "<group>";
@@ -218,9 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */,
 				CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */,
 				EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */,
 				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
+				EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */,
 				EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */,
 				EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */,
 			);
