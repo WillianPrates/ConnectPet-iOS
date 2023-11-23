@@ -8,7 +8,7 @@ struct PerfilPetView: View {
         ("syringe", "Vacinas", .vacinasList),
         ("pills", "Medicamentos", .medicamentosList),
         ("calendar", "Consultas agendadas", .consultasAgendadasList),
-        ("dog", "Castração", .castraçãoList),
+        ("dog", "Castração", .castracaoList),
         ("heart.text.square", "Histórico de consultas", .historicoList),
         ("cat", "Ciclo estral", .cicloParte1List)
     ]
