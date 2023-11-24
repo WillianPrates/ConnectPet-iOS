@@ -14,11 +14,16 @@
         <attribute name="resultado" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES" codeGenerationType="class">
+        <attribute name="castrado" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="especie" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nomePet" optional="YES" attributeType="String"/>
+        <attribute name="pelagem" optional="YES" attributeType="String"/>
         <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="raca" optional="YES" attributeType="String"/>
         <attribute name="reca" optional="YES" attributeType="String"/>
+        <attribute name="sexo" optional="YES" attributeType="String"/>
         <relationship name="consulta" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Consulta"/>
         <relationship name="exame" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exame"/>
         <relationship name="vacinas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vacina"/>

@@ -17,7 +17,9 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Pet.id, ascending: true)],
         animation: .default)
     private var pets: FetchedResults<Pet>
-
+    
+    @State private var mostrarSheet = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -35,12 +37,16 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {
+                        mostrarSheet.toggle()
+                    }) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
-            Text("Select an item")
+            .sheet(isPresented: $mostrarSheet, content: {
+                CadastroPetView()
+            })
         }
     }
 
