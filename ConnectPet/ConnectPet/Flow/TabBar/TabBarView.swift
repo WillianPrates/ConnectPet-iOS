@@ -10,14 +10,15 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            ContentView()
+            ListaPetView()
                 .tabItem { Label("", systemImage: "pawprint.fill")}
             ContentView()
                 .tabItem { Label("", systemImage: "list.bullet")}
-            ContentView()
+            CadastroPetView()
                 .tabItem { Label("", systemImage: "person.fill")}
         }
-       .tint(.purpleButtonTab)    }
+        .tint(.purpleButtonTab)
+    }
 }
 
 #Preview {
