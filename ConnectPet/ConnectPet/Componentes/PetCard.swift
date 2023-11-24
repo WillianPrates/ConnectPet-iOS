@@ -29,11 +29,13 @@ struct PetCard: View {
                     .bold()
                     .padding(.horizontal)
                     .padding(.top,125)
+                    .foregroundColor(.vacinasList)
             Text(pet.age)
                 .padding(.bottom,8)
                 .padding(.horizontal)
+                .foregroundColor(.vacinasList)
         }
-        .background(Color("BlueCard"))
+        .background(Color(.white))
         .cornerRadius(16)
         .frame(width: 175,height: 155)
     }
