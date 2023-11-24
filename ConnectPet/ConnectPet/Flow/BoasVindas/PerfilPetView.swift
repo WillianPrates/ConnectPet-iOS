@@ -13,7 +13,7 @@ struct PerfilPetView: View {
         ("cat", "Ciclo estral", .cicloParte1List)
     ]
     
-   
+ //Exames, vacinas, medicamentos e consultas
     
     
     var body: some View {
