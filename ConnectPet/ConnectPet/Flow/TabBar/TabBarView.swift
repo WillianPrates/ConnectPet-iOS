@@ -11,11 +11,11 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             ListaPetView()
-                .tabItem { Label("", systemImage: "pawprint.fill")}
-            ContentView()
-                .tabItem { Label("", systemImage: "list.bullet")}
+                .tabItem { Label("Pets", systemImage: "pawprint.fill")}
+            FeedView()
+                .tabItem { Label("Feed", systemImage: "list.bullet")}
             CadastroPetView()
-                .tabItem { Label("", systemImage: "person.fill")}
+                .tabItem { Label("Perfil", systemImage: "person.fill")}
         }
         .tint(.purpleButtonTab)
     }
