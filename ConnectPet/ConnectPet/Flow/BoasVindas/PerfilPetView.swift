@@ -43,7 +43,7 @@ struct PerfilPetView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Text("Short Hair")
+                    Text(pet.raca ?? "")
                         .foregroundColor(Color("GrayBack"))
                         .font(.title3)
                 }
