@@ -12,6 +12,8 @@ struct CadastroPetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
+    @State var estaAnimando: Bool = false
+    
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
     private let numberFormatter: NumberFormatter = {
@@ -46,12 +48,20 @@ struct CadastroPetView: View {
                             .scaledToFit()
                             .frame(width: 150)
                             .foregroundStyle(Color("PurpleButtonTab"))
+                            .rotationEffect(Angle(degrees: (estaAnimando ? -15 : 15)))
+                            .scaleEffect((estaAnimando ? 0.75 : 1.25))
+                            .onAppear {
+                                withAnimation(.bouncy.repeatForever()) {
+                                    estaAnimando.toggle()
+                                }
+                            }
                     }
                     .clipShape(Circle())
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .padding(.vertical, 30)
+                
                 }
                 .textCase(nil)
                 .listRowBackground(Color.white)
@@ -116,6 +126,7 @@ struct CadastroPetView: View {
                     }
                 }
             }
+
         }
     }
 }

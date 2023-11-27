@@ -13,6 +13,8 @@ struct PerfilPetView: View {
         ("cat", "Ciclo estral", .cicloParte1List)
     ]
     
+    let pet: Pet
+    
  //Exames, vacinas, medicamentos e consultas
     
     
@@ -37,7 +39,7 @@ struct PerfilPetView: View {
                         .frame(width: 175)
                         .clipShape(Circle())
                     
-                    Text("Charlotte") // nome
+                    Text(pet.nomePet ?? "") // nome
                         .font(.title)
                         .fontWeight(.bold)
                     
@@ -47,30 +49,7 @@ struct PerfilPetView: View {
                 }
                 
                 .padding()
-                
-//                VStack {
-//                    HStack{
-//
-//                        Text("Informações").bold()
-//                            .font(.caption)
-//                            .padding()
-//                        Spacer()
-//                    }
-//                    Rectangle()
-//                        .frame(width: 355, height: 100)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                }
 
-                
-               
-                    
-                
-               
-                
-                
-                
-                
                 List {
                     ForEach(buttonsData, id: \.systemName) { buttonData in
                         NavigationLink(destination: ContentView()) {
@@ -99,6 +78,6 @@ struct PerfilPetView: View {
 
 struct PerfilPetView_Previews: PreviewProvider {
     static var previews: some View {
-        PerfilPetView()
+        PerfilPetView(pet: Pet())
     }
 }
