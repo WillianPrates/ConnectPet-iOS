@@ -7,40 +7,39 @@
 
 import SwiftUI
 
-struct FakePet: Identifiable {
-    var id = UUID()
-    var imageName: String
-    var name: String
-    var age: String
-}
-
 struct PetCard: View {
     
-    var pet: FakePet
+    let pet: Pet
     
+    @State private var mostrarSheetPerfil = false
+
     var body: some View {
         VStack(alignment: .leading){
-          
-            Image(pet.imageName)
+            Image(systemName: "pawprint.circle.fill")
                 .resizable()
                     .scaledToFill()
-                    .frame(width: 175, height: -5)
-            Text(pet.name)
+                    .frame(width: 175, height: 155)
+            Text(pet.nomePet!)
                     .bold()
                     .padding(.horizontal)
-                    .padding(.top,125)
                     .foregroundColor(.vacinasList)
-            Text(pet.age)
-                .padding(.bottom,8)
+                    .lineLimit(1)
+            Text(pet.dataNascimento?.description ?? "")
                 .padding(.horizontal)
                 .foregroundColor(.vacinasList)
+                .lineLimit(1)
         }
         .background(Color(.white))
         .cornerRadius(16)
-        .frame(width: 175,height: 155)
+        .onTapGesture {
+            mostrarSheetPerfil.toggle()
+        }
+        .sheet(isPresented: $mostrarSheetPerfil, content: {
+            PerfilPetView(pet: pet)
+        })
     }
 }
 
 #Preview {
-    PetCard(pet: FakePet(imageName: "dog", name: "Doly", age: "17 anos"))
+    PetCard(pet: Pet())
 }
