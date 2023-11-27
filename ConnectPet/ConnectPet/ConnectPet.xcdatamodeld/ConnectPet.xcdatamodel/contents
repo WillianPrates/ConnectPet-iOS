@@ -22,7 +22,6 @@
         <attribute name="pelagem" optional="YES" attributeType="String"/>
         <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="raca" optional="YES" attributeType="String"/>
-        <attribute name="reca" optional="YES" attributeType="String"/>
         <attribute name="sexo" optional="YES" attributeType="String"/>
         <relationship name="consulta" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Consulta"/>
         <relationship name="exame" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exame"/>
