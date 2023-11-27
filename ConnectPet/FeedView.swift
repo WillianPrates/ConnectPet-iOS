@@ -5,26 +5,6 @@ struct FeedView: View {
     @State private var isAnimated = false
 
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
-<<<<<<< Updated upstream
-    
-    var body: some View {
-        NavigationStack {
-            VStack {
-                VStack {
-                    HStack {
-                        Button(action: {
-                            print("Botão 1 pressionado!")
-                        }, label: {
-                            VStack {
-                                HStack {
-                                    Text("Histórico de Consultas")
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .foregroundColor(.black)
-                                        .bold()
-                                }
-                                HStack {
-=======
     let buttonWidth: CGFloat = 150
 
     var body: some View {
@@ -40,7 +20,7 @@ struct FeedView: View {
                             .padding()
                             .background(Color.white)
                             .cornerRadius(10)
-                            .opacity(isAnimated ? 1 : 0) 
+                            .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
 
                         HStack {
                             Button(action: {
@@ -62,7 +42,7 @@ struct FeedView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                             })
-                            .opacity(isAnimated ? 1 : 0)
+                            .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
 
                             Spacer()
 
@@ -75,115 +55,17 @@ struct FeedView: View {
                                         .foregroundColor(.black)
                                         .bold()
                                         .frame(width: buttonWidth)
->>>>>>> Stashed changes
                                     Image(systemName: "calendar")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 30)
-<<<<<<< Updated upstream
-                                        .foregroundColor(.black)
-                                }
-                            }
-                            .padding()
-                            .background(Color.vacinas)
-                            .cornerRadius(10)
-                        })
-                        
-                        Button(action: {
-                            print("Botão 2 pressionado!")
-                        }, label: {
-                            VStack {
-                                HStack {
-                                    Text("Cartilha de vacinação")
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .foregroundColor(.black)
-                                        .bold()
-                                }
-                                HStack {
-                                    Image(systemName: "calendar")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30)
-                                        .foregroundColor(.black)
-                                }
-                            }
-                            .padding()
-                            .background(Color.consultas)
-                            .cornerRadius(10)
-                        })
-                    }
-                    
-                    HStack {
-                        Button(action: {
-                            print("Botão 2 pressionado!")
-                        }, label: {
-                            VStack {
-                                HStack {
-                                    Text("Resultado de exames")
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .foregroundColor(.black)
-                                        .bold()
-                                }
-                                HStack {
-                                    Image(systemName: "calendar")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30)
-                                        .foregroundColor(.black)
-                                }
-                            }
-                            .padding()
-                            .background(Color.exames)
-                            .cornerRadius(10)
-                        })
-                        
-                        Button(action: {
-                            print("Botão 2 pressionado!")
-                        }, label: {
-                            VStack {
-                                HStack {
-                                    Text("Medicamentos")
-                                        .lineLimit(2)
-                                        .frame(width: 100)
-                                        .foregroundColor(.black)
-                                        .bold()
-                                }
-                                HStack {
-                                    Image(systemName: "calendar")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30)
-                                        .foregroundColor(.black)
-                                }
-                            }
-                            .padding()
-                            .background(Color.medicamentos)
-                            .cornerRadius(10)
-                        })
-                    }
-                }
-                .navigationTitle("Feed")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            // Ação que você deseja realizar
-                        }) {
-                            Image(systemName: "ellipsis.circle")
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
-            }
-=======
                                         .foregroundColor(.green)
                                 }
                                 .padding()
                                 .background(Color.white)
                                 .cornerRadius(10)
                             })
-                            .opacity(isAnimated ? 1 : 0)
+                            .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
                         }
 
                         HStack {
@@ -206,7 +88,7 @@ struct FeedView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                             })
-                            .opacity(isAnimated ? 1 : 0)
+                            .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
 
                             Spacer()
 
@@ -229,11 +111,12 @@ struct FeedView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                             })
-                            .opacity(isAnimated ? 1 : 0)
+                            .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
                         }
                     }
                     .padding()
                     .onAppear {
+                        // Adiciona animação de fade-in quando a tela aparece
                         withAnimation(.easeIn(duration: 0.5)) {
                             self.isAnimated = true
                         }
@@ -251,7 +134,6 @@ struct FeedView: View {
                     }
                 }
             }
->>>>>>> Stashed changes
         }
     }
 }
