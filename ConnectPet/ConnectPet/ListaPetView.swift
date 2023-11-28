@@ -10,90 +10,58 @@ import SwiftUI
 var botao: Bool = false
 
 struct ListaPetView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pet.id, ascending: true)],
+        animation: .default)
     
+    private var pets: FetchedResults<Pet>
     
-    var pets: [FakePet] = [
-        FakePet(imageName: "dog", name: "0-Doly", age: "17 anos"),
-        FakePet(imageName: "dog", name: "1-Doly", age: "17 anos"),
-        FakePet(imageName: "dog", name: "2-Doly", age: "17 anos"),
-        FakePet(imageName: "dog", name: "3-Doly", age: "17 anos"),
-        FakePet(imageName: "dog", name: "4-Doly", age: "17 anos")
-    ]
-    
-    var indices: [Int] {
-        
-        var aux: [Int] = []
-        
-        for index in pets.indices {
-            if index%2 == 1 {
-                aux.append(index)
-            }
-        }
-        
-        return aux
-    }
+    @State private var mostrarSheet = false
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
+    
+    let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
     
     var body: some View {
         NavigationStack {
             VStack{
-//                HStack {
-//                    Image(systemName: "hand.wave")
-//                        .resizable()
-//                        .frame(width: 20,height: 20)
-//                        .padding(.leading)
-//                    Text("Hello, Déborah!")
-//                        .font(.subheadline)
-//                        .bold()
-//                        .multilineTextAlignment(.leading)
-//                    Spacer()
-//                }
-                
                 ScrollView {
                     if pets.count >= 0 {
-                        VStack {
-                            ForEach(indices, id: \.self) { value in
-                                HStack {
-                                    if value + 1 < pets.count {
-                                        PetCard(pet: pets[value])
-                                        PetCard(pet: pets[value+1])
-                                            .padding(.bottom)
-                                            .padding(.top)
-                                    } else {
-                                        PetCard(pet: pets[value])
-                                            .padding(.bottom)
-                                            .padding(.top)
-                                            .padding(.leading)
-                                        Spacer()
-                                    }
-                                }
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(pets, id: \.self) { pet in
+                                PetCard(pet: pet)
                             }
+                            .background(.orange)
                         }
                     }
                 }
-               // .background(corBackground)
-
-               // .padding(.horizontal, 20)
             }
             .frame(maxWidth: .infinity)
             .background(corBackground)
             .navigationTitle("Meus Pets")
             .toolbar {
-                ToolbarItem() {
-                    Button {
-                        print("Função adicionar novo pet")
-                    }label: {
-                        Label("Adicionar Novo Pet", systemImage: "plus.circle")
-                            .tint(.black)
-                            .frame(width: 175,height: 175)
-                            .background(.blueCard)
-                            .cornerRadius(16)
-                            .font(.headline)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                ToolbarItem {
+                    Button(action: {
+                        mostrarSheet.toggle()
+                    }) {
+                        Label("Add Item", systemImage: "plus")
                     }
                 }
             }
+            .sheet(isPresented: $mostrarSheet, content: {
+                CadastroPetView()
+            })
+        
         }
+        
     }
 }
 

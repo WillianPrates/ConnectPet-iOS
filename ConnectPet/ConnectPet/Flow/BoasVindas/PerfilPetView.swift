@@ -13,13 +13,18 @@ struct PerfilPetView: View {
         ("cat", "Ciclo estral", .cicloParte1List)
     ]
     
-   
+    let pet: Pet
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    
+    //Exames, vacinas, medicamentos e consultas
     
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Button(action: {}, label: {
+                Button(action: { }, label: {
                     HStack {
                         Spacer()
                         Image(systemName: "ellipsis.circle")
@@ -37,39 +42,16 @@ struct PerfilPetView: View {
                         .frame(width: 175)
                         .clipShape(Circle())
                     
-                    Text("Charlotte") // nome
+                    Text(pet.nomePet ?? "") // nome
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Text("Short Hair")
+                    Text(pet.raca ?? "")
                         .foregroundColor(Color("GrayBack"))
                         .font(.title3)
                 }
                 
                 .padding()
-                
-//                VStack {
-//                    HStack{
-//
-//                        Text("Informações").bold()
-//                            .font(.caption)
-//                            .padding()
-//                        Spacer()
-//                    }
-//                    Rectangle()
-//                        .frame(width: 355, height: 100)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                }
-
-                
-               
-                    
-                
-               
-                
-                
-                
                 
                 List {
                     ForEach(buttonsData, id: \.systemName) { buttonData in
@@ -95,10 +77,26 @@ struct PerfilPetView: View {
             .navigationBarHidden(true)
         }
     }
+    
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { pet[$0].forEach(viewContext.delete)
+//                
+//                do {
+//                    try viewContext.save()
+//                } catch {
+//                    // Replace this implementation with code to handle the error appropriately.
+//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                    let nsError = error as NSError
+//                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//                }
+//            }
+//        }
+//    }
 }
 
 struct PerfilPetView_Previews: PreviewProvider {
     static var previews: some View {
-        PerfilPetView()
+        PerfilPetView(pet: Pet())
     }
 }

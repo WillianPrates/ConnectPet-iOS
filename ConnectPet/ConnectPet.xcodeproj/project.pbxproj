@@ -13,6 +13,8 @@
 		6F75C39C2B0E36E000677E95 /* ListaPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F75C39B2B0E36E000677E95 /* ListaPetView.swift */; };
 		6F9F56A42B10D62C004BD480 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9F56A32B10D62C004BD480 /* PerfilView.swift */; };
 		6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3D8F42B0CF5300098A031 /* PetCard.swift */; };
+		CF3D17322B14CEB2004E226E /* CartilhaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D17312B14CEB2004E226E /* CartilhaView.swift */; };
+		CF795ED02B10D13D004AE085 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF795ECF2B10D13D004AE085 /* FeedView.swift */; };
 		CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */; };
 		EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */; };
 		EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EC2B06653600520E25 /* ContentView.swift */; };
@@ -33,6 +35,8 @@
 		6F75C39B2B0E36E000677E95 /* ListaPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPetView.swift; sourceTree = "<group>"; };
 		6F9F56A32B10D62C004BD480 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		6FF3D8F42B0CF5300098A031 /* PetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
+		CF3D17312B14CEB2004E226E /* CartilhaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartilhaView.swift; sourceTree = "<group>"; };
+		CF795ECF2B10D13D004AE085 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = SOURCE_ROOT; };
 		CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilPetView.swift; path = ConnectPet/Flow/BoasVindas/PerfilPetView.swift; sourceTree = SOURCE_ROOT; };
 		EF5BF3E72B06653600520E25 /* ConnectPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPetApp.swift; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 				6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */,
 			);
 			path = Componentes;
+			sourceTree = "<group>";
+		};
+		CF3D17302B14CE3E004E226E /* SubFeedView */ = {
+			isa = PBXGroup;
+			children = (
+				CF3D17312B14CEB2004E226E /* CartilhaView.swift */,
+			);
+			path = SubFeedView;
 			sourceTree = "<group>";
 		};
 		EF5BF3DE2B06653600520E25 = {
@@ -141,6 +153,8 @@
 		EF5BF3FC2B06B05900520E25 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				CF795ECF2B10D13D004AE085 /* FeedView.swift */,
+				CF3D17302B14CE3E004E226E /* SubFeedView */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -259,10 +273,12 @@
 				6F75C39C2B0E36E000677E95 /* ListaPetView.swift in Sources */,
 				6F19EA412B1612D200E6FB15 /* NovoExameCard.swift in Sources */,
 				6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */,
+				CF3D17322B14CEB2004E226E /* CartilhaView.swift in Sources */,
 				6F9F56A42B10D62C004BD480 /* PerfilView.swift in Sources */,
 				EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */,
 				CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */,
 				EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */,
+				CF795ED02B10D13D004AE085 /* FeedView.swift in Sources */,
 				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
 				EFC5BBF82B10D1A80090D18A /* EnumCadastroPet.swift in Sources */,
 				EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */,
