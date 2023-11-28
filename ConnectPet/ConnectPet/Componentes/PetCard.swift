@@ -7,34 +7,32 @@
 
 import SwiftUI
 
-struct FakePet: Identifiable {
-    var id = UUID()
-    var imageName: String
-    var name: String
-    var age: String
-}
 
 struct PetCard: View {
     
-    var pet: FakePet
+    var pet: Pet
     
     var body: some View {
         VStack(alignment: .leading){
-          
-            Image(pet.imageName)
-                .resizable()
-                    .scaledToFill()
-                    .frame(width: 175, height: -5)
-            Text(pet.name)
-                    .bold()
+            VStack(spacing: 1) {
+                Image(systemName: "pawprint.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 100)
+                        .padding(9)
+                Text(pet.nomePet!)
+                        .bold()
+                        .padding(.horizontal)
+                        .foregroundColor(.purple)
+                        .lineLimit(1)
+                Text(pet.dataNascimento?.description ?? "")
                     .padding(.horizontal)
                     .padding(.top,125)
                     .foregroundColor(.vacinasList)
-            Text(pet.age)
-                .padding(.bottom,8)
-                .padding(.horizontal)
-                .foregroundColor(.vacinasList)
+            }
+
         }
+        //pet.dataNascimento?.description ?? ""
         .background(Color(.white))
         .cornerRadius(16)
         .frame(width: 175,height: 155)
@@ -42,5 +40,6 @@ struct PetCard: View {
 }
 
 #Preview {
-    PetCard(pet: FakePet(imageName: "dog", name: "Doly", age: "17 anos"))
+    PetCard(pet: Pet())
 }
+
