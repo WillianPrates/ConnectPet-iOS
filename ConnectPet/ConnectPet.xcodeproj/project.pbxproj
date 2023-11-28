@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F19EA3B2B14C38D00E6FB15 /* VacinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA3A2B14C38D00E6FB15 /* VacinaView.swift */; };
+		6F19EA3D2B14C7B400E6FB15 /* NovaVacinaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */; };
+		6F19EA412B1612D200E6FB15 /* NovoExameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */; };
 		6F75C39C2B0E36E000677E95 /* ListaPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F75C39B2B0E36E000677E95 /* ListaPetView.swift */; };
 		6F9F56A42B10D62C004BD480 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9F56A32B10D62C004BD480 /* PerfilView.swift */; };
 		6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3D8F42B0CF5300098A031 /* PetCard.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F19EA3A2B14C38D00E6FB15 /* VacinaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacinaView.swift; sourceTree = "<group>"; };
+		6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaVacinaCard.swift; sourceTree = "<group>"; };
+		6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoExameCard.swift; sourceTree = "<group>"; };
 		6F75C39B2B0E36E000677E95 /* ListaPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaPetView.swift; sourceTree = "<group>"; };
 		6F9F56A32B10D62C004BD480 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		6FF3D8F42B0CF5300098A031 /* PetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				6FF3D8F42B0CF5300098A031 /* PetCard.swift */,
+				6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */,
+				6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 				EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */,
 				6F75C39B2B0E36E000677E95 /* ListaPetView.swift */,
 				6F9F56A32B10D62C004BD480 /* PerfilView.swift */,
+				6F19EA3A2B14C38D00E6FB15 /* VacinaView.swift */,
 				EF5BF3EC2B06653600520E25 /* ContentView.swift */,
 				6FF3D8F32B0CF5110098A031 /* Componentes */,
 				EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */,
@@ -262,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F75C39C2B0E36E000677E95 /* ListaPetView.swift in Sources */,
+				6F19EA412B1612D200E6FB15 /* NovoExameCard.swift in Sources */,
 				6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */,
 				CF3D17322B14CEB2004E226E /* CartilhaView.swift in Sources */,
 				6F9F56A42B10D62C004BD480 /* PerfilView.swift in Sources */,
@@ -272,9 +282,11 @@
 				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
 				EFC5BBF82B10D1A80090D18A /* EnumCadastroPet.swift in Sources */,
 				EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */,
+				6F19EA3B2B14C38D00E6FB15 /* VacinaView.swift in Sources */,
 				EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */,
 				EFC5BBFA2B10D2290090D18A /* TabBarView.swift in Sources */,
 				EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */,
+				6F19EA3D2B14C7B400E6FB15 /* NovaVacinaCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

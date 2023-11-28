@@ -41,12 +41,12 @@ class CadastroPetViewModel: ObservableObject {
             newPet.pelagem = pelagem.title
             newPet.castrado = castrado
             
-            if (newPet.especie == "cachorro"){
-                newPet.raca = racaCachorro.title
-            } else if (newPet.especie == "gato"){
-                newPet.raca = racaGato.title
+            if (newPet.especie == "Cachorro"){
+                newPet.raca = String(racaCachorro.title)
+            } else if (newPet.especie == "Gato"){
+                newPet.raca = String(racaGato.title)
             } else {
-                newPet.raca = "Null"
+                newPet.raca = "Indefinido"
             }
 
             do {

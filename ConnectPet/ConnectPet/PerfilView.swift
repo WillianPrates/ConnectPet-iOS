@@ -17,11 +17,27 @@ struct PerfilView: View {
         ("questionmark.circle", "Ajuda", .consultasAgendadasList),
         ("power", "Sair", .castracaoList)
     ]
+    // pegar imagem, editável, e salvar em user default
+    
+    // function
+    let imageKey = "SavedFoto"
+    var imageData: Data?
+    
+    mutating func getImage() {
+        if let data = UserDefaults.standard.data(forKey: "SavedFoto") {
+            if let decoded = try? JSONDecoder().decode(Data.self, from: data){
+                self.imageData = decoded
+                return
+            }
+        }
+    }
     
     var body: some View {
         NavigationStack{
             VStack{
                 HStack{
+                    // Image(uiImage: UIImage(data: imageData))
+                    // usar if let caso vier nulo
                     Image("fotoperfil")
                         .resizable()
                         .scaledToFill()
