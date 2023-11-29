@@ -20,7 +20,7 @@ struct PetCard: View {
                         .scaledToFit()
                         .frame(width: 120, height: 100)
                         .padding(9)
-                Text(pet.nomePet!)
+                Text(pet.nomePet ?? "")
                         .bold()
                         .padding(.horizontal)
                         .foregroundColor(.purple)
@@ -42,4 +42,14 @@ struct PetCard: View {
 #Preview {
     PetCard(pet: Pet())
 }
+
+
+struct PetCard_Previews: PreviewProvider {
+    static var previews: some View {
+        let persistenceController = PersistenceController.shared
+        PetCard(pet: Pet(context: persistenceController.container.viewContext))
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+    }
+}
+
 
