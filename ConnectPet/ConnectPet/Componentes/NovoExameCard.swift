@@ -18,10 +18,39 @@ struct NovoExameCard: View {
     @State var exame: FakeExame
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            List{Section(header: Text("Adicionar Novo Exame")){
+                
+                HStack {
+                    Text("Nome do Exame")
+                        .bold()
+                    Spacer()
+                    TextField("Nome do Exame", text: $exame.nomeExame)
+                }
+                HStack{
+                    Text("Descrição:")
+                        .bold()
+                    TextField("Descrição:", text: $exame.descricaoExame)
+                }
+                
+                HStack {
+                    Text ("Resultado: ")
+                        .bold()
+                    Spacer()
+                    TextField("Resultado:", text: $exame.resultadoExame)
+                }
+                HStack{
+                    Text("Data:")
+                        .bold()
+                    TextField("Data:", text: $exame.dataExame)
+                }
+            }.listRowBackground(Color.white)
+            }
+        }
     }
 }
-//
-//#Preview {
-//    NovoExameCard()
-//}
+
+#Preview {
+    NovoExameCard(exame: FakeExame(descricaoExame: "bla bla bla", resultadoExame: "positivo", nomeExame: "Rotina", dataExame: "29/11/2023"))
+}
+
