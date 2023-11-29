@@ -7,9 +7,8 @@ struct PerfilPetView: View {
         ("pencil.and.list.clipboard", "Exames", .examesList),
         ("syringe", "Vacinas", .vacinasList),
         ("pills", "Medicamentos", .medicamentosList),
-        ("calendar", "Consultas agendadas", .consultasAgendadasList),
+        ("calendar", "Consultas", .consultasAgendadasList),
         ("dog", "Castração", .castracaoList),
-        ("heart.text.square", "Histórico de consultas", .historicoList),
         ("cat", "Ciclo estral", .cicloParte1List)
     ]
     
@@ -97,6 +96,8 @@ struct PerfilPetView: View {
 
 struct PerfilPetView_Previews: PreviewProvider {
     static var previews: some View {
-        PerfilPetView(pet: Pet())
+        let persistenceController = PersistenceController.shared
+        PerfilPetView(pet: Pet(context: persistenceController.container.viewContext))
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 }
