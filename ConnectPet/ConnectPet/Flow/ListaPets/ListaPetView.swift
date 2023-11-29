@@ -34,6 +34,7 @@ struct ListaPetView: View {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(pets, id: \.self) { pet in
                             PetCard(pet: pet)
+
                         }
                         .background(.orange)
                     }
