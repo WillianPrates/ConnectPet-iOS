@@ -79,7 +79,6 @@ struct PerfilPetView: View {
         }
     }
     
-<<<<<<< Updated upstream
     func destinationView(for destination: DestinationType) -> some View {
         switch (destination){
         case .examesList:
@@ -98,31 +97,10 @@ struct PerfilPetView: View {
             return AnyView(ContentView())
         }
     }
-=======
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { pet[$0].forEach(viewContext.delete)
-//                
-//                do {
-//                    try viewContext.save()
-//                } catch {
-//                    // Replace this implementation with code to handle the error appropriately.
-//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                    let nsError = error as NSError
-//                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//                }
-//            }
-//        }
-//    }
->>>>>>> Stashed changes
 }
 
 //struct PerfilPetView_Previews: PreviewProvider {
 //    static var previews: some View {
-<<<<<<< Updated upstream
 //        PerfilPetView(pet: Pet()))
-=======
-//        PerfilPetView(pet: Pet())
->>>>>>> Stashed changes
 //    }
 //}
