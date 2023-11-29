@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct PetCard: View {
-    
+    @State private var mostrarSheetPerfil = false
     var pet: Pet
     
     var body: some View {
@@ -20,22 +20,29 @@ struct PetCard: View {
                         .scaledToFit()
                         .frame(width: 120, height: 100)
                         .padding(9)
-                Text(pet.nomePet ?? "")
+                Text(pet.nomePet!)
                         .bold()
                         .padding(.horizontal)
                         .foregroundColor(.purple)
                         .lineLimit(1)
                 Text(pet.dataNascimento?.description ?? "")
                     .padding(.horizontal)
-                    .padding(.top,125)
+                    .padding(.top,12)
                     .foregroundColor(.vacinasList)
+                    .lineLimit(1)
             }
 
         }
         //pet.dataNascimento?.description ?? ""
         .background(Color(.white))
+        .onTapGesture {
+                    mostrarSheetPerfil.toggle()
+                }
+                .sheet(isPresented: $mostrarSheetPerfil, content: {
+                    PerfilPetView(pet: pet)
+                })
         .cornerRadius(16)
-        .frame(width: 175,height: 155)
+        
     }
 }
 

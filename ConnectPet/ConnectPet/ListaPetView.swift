@@ -36,7 +36,7 @@ struct ListaPetView: View {
                             ForEach(pets, id: \.self) { pet in
                                 PetCard(pet: pet)
                             }
-                            .background(.orange)
+                            
                         }
                     }
                 }
