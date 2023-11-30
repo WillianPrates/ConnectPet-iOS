@@ -87,13 +87,13 @@ struct PerfilPetView: View {
     func destinationView(for destination: DestinationType) -> some View {
         switch (destination){
         case .examesList:
-            return AnyView(ContentView())
+            return AnyView(ExameView())
         case .vacinasList:
-            return AnyView(VacinaView())
+            return AnyView(VacinaView(pet: pet))
         case .medicamentosList:
-            return AnyView(ContentView())
+            return AnyView(MedicamentoView())
         case .consultaList:
-            return AnyView(ContentView())
+            return AnyView(ConsultaView())
         case .cicloParte1List:
             return AnyView(ContentView())
         }

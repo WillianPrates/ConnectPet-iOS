@@ -17,6 +17,7 @@ class VacinaViewModel: ObservableObject {
     @Published var nome: String = ""
     @Published var tipoAnimal: String = ""
     @Published var dataVacina: Date = Date()
+    @Published var pet: Pet = Pet()
     
     func addItem(vc: NSManagedObjectContext) {
         // withAnimation {
@@ -27,6 +28,7 @@ class VacinaViewModel: ObservableObject {
         newVacina.nome = nome
         newVacina.tipoAnimal = tipoAnimal
         newVacina.dataVacina = dataVacina
+        newVacina.pet = pet
         
         do {
             try vc.save()
