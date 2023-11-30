@@ -34,12 +34,9 @@ struct ListaPetView: View {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(pets, id: \.self) { pet in
                             PetCard(pet: pet)
-
                         }
                         .background(.orange)
-                    }
-                    
-                }
+                    }                }
             }
             .frame(maxWidth: .infinity)
             .background(corBackground)
@@ -59,9 +56,7 @@ struct ListaPetView: View {
             .sheet(isPresented: $mostrarSheet, content: {
                 CadastroPetView()
             })
-            
         }
-        
     }
 }
 
