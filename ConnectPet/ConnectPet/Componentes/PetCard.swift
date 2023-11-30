@@ -20,7 +20,7 @@ struct PetCard: View {
                     .scaledToFit()
                     .frame(width: 120, height: 100)
                     .padding(9)
-                Text(pet.nomePet!)
+                Text(pet.nomePet ?? "")
                     .bold()
                     .padding(.horizontal)
                     .foregroundColor(.purple)
