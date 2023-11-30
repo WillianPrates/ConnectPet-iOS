@@ -26,11 +26,20 @@ struct PerfilPetView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 VStack {
-                    Image("Gatinho")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 175)
-                        .clipShape(Circle())
+                    if(pet.especie == "Gato"){
+                        Image("gatoList")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 175)
+                            .clipShape(Circle())
+                    }
+                    else{
+                        Image("cachorroList")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 175)
+                            .clipShape(Circle())
+                    }
                     
                     Text(pet.nomePet ?? "")
                         .font(.title)
@@ -55,7 +64,7 @@ struct PerfilPetView: View {
                                     .padding(.leading, 8)
                             }
                         }
-                        .padding(.vertical, 3)
+                        .padding(.vertical, 6)
                     }
                 }
                 .scrollContentBackground(.hidden)

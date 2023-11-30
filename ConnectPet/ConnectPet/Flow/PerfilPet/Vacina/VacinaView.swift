@@ -26,18 +26,33 @@ struct VacinaView: View {
     var body: some View {
          VStack{
              NovaVacinaCard(nomeVacina: $nomeVacina, descricaoVacina: $descricaoVacina, dataVacina: $dataVacina)
-                 .frame(maxHeight: 180)
+                 .frame(height: 200)
             List{
-                Section(header: Text("Histórico de Vacinas")){
-                    ForEach(vacinasFetch, id: \.self) { vacina in
-                        if vacina.pet == pet {
-                            ListaVacinasView(nomeVacina: vacina.nome ?? "", descricaoVacina: vacina.descricao ?? "", dataVacina: vacina.dataVacina ?? Date())
+                if(!vacinasFetch.isEmpty){
+                    Section(header: Text("Histórico de Vacinas")){
+                        ForEach(vacinasFetch, id: \.self) { vacina in
+                            if vacina.pet == pet {
+                                ListaVacinasView(nomeVacina: vacina.nome ?? "", descricaoVacina: vacina.descricao ?? "", dataVacina: vacina.dataVacina ?? Date())
+                            }
                         }
+                        .onDelete(perform: { indexSet in
+                            vacinaViewModel.deleteItems(offsets: indexSet, vc: viewContext, vacinas: vacinasFetch)
+                        })
                     }
-                    .onDelete(perform: { indexSet in
-                        vacinaViewModel.deleteItems(offsets: indexSet, vc: viewContext, vacinas: vacinasFetch)
-                    })
                 }
+                else{
+                    Section(header: Text("")){
+                        ForEach(vacinasFetch, id: \.self) { vacina in
+                            if vacina.pet == pet {
+                                ListaVacinasView(nomeVacina: vacina.nome ?? "", descricaoVacina: vacina.descricao ?? "", dataVacina: vacina.dataVacina ?? Date())
+                            }
+                        }
+                        .onDelete(perform: { indexSet in
+                            vacinaViewModel.deleteItems(offsets: indexSet, vc: viewContext, vacinas: vacinasFetch)
+                        })
+                    }
+                }
+                
             }
             .listStyle(.insetGrouped)
         }
@@ -67,8 +82,4 @@ struct VacinaView: View {
     }
 }
 
-//#Preview {
-//    NavigationStack {
-//        VacinaView()
-//    }
-//}
+

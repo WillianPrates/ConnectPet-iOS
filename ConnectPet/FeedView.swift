@@ -2,7 +2,6 @@ import SwiftUI
 
 struct FeedView: View {
     @State private var selectedDate = Date()
-    @State private var isAnimated = false
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     let buttonWidth: CGFloat = 150
@@ -16,7 +15,7 @@ struct FeedView: View {
                         .datePickerStyle(.graphical)
                         .background(Color.white)
                         .cornerRadius(10)
-                        .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
+                    
                         .tint(.purpleButtonTab)
                     
                     HStack {
@@ -38,7 +37,7 @@ struct FeedView: View {
                             .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0)
+                        
                         
                         Spacer()
                         
@@ -60,7 +59,6 @@ struct FeedView: View {
                             .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
                     }
                     
                     HStack {
@@ -82,7 +80,6 @@ struct FeedView: View {
                             .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
                         
                         Spacer()
                         
@@ -104,7 +101,7 @@ struct FeedView: View {
                             .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0) 
+                        
                     }
                     
                 }
@@ -114,12 +111,8 @@ struct FeedView: View {
             }
             .navigationTitle("Feed")
             .background(corBackground)
-            .onAppear {
-                // Adiciona animação de fade-in quando a tela aparece
-                withAnimation(.easeIn(duration: 0.5)) {
-                    self.isAnimated = true
-                }
-            }
+        
+            
         }
     }
 }

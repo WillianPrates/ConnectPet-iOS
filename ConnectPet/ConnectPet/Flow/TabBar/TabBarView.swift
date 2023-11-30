@@ -10,7 +10,7 @@ struct TabBarView: View {
             PerfilView()
                 .tabItem { Label("Perfil", systemImage: "person.fill")}
         }
-        .tint(.purpleButtonTab)
+        .tint(.black)
         .onAppear {
             UITabBar.appearance().backgroundColor = .systemBackground
         }

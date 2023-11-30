@@ -63,7 +63,7 @@ struct MedicamentoView: View {
                     print("Salvar")
                 }label: {
                     Label("Salvar", systemImage: "")
-                        .tint(.blue)
+                        .tint(.black)
                     }
                 })
             })

@@ -81,9 +81,6 @@ struct ListaPetView: View {
             .background(corBackground)
             .navigationTitle("Olá, \(nomeTutor) 😃")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
                     Button(action: {
                         mostrarSheet.toggle()
