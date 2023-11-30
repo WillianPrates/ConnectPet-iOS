@@ -31,12 +31,19 @@ struct ListaPetView: View {
         NavigationStack {
             VStack{
                 ScrollView {
-                    if pets.count >= 0 {
+                    if pets.count > 0 {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(pets, id: \.self) { pet in
                                 PetCard(pet: pet)
                             }
                             
+                        }
+                    }
+                    else{
+                        VStack{
+                            Spacer()
+                            Text("Não existe nenhum pet cadastrado")
+                                .padding()
                         }
                     }
                 }
