@@ -44,7 +44,7 @@ struct VacinaView: View {
         .scrollContentBackground(.hidden)
         .background(corBackground)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing, content: {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     vacinaViewModel.nome = nomeVacina
                     vacinaViewModel.descricaoVacina = descricaoVacina
@@ -57,12 +57,9 @@ struct VacinaView: View {
                     descricaoVacina = ""
                     dataVacina = Date()
                 } label: {
-                    Label("Salvar", systemImage: "")
-                        .tint(.blue)
-                        .bold()
-                        .padding(.horizontal)
+                    Text("Salvar")
                 }
-            })
+            }
         }
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

@@ -10,7 +10,7 @@
     <entity name="Exame" representedClassName="Exame" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="id_exame" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="resultado" optional="YES" attributeType="String"/>
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="exames" inverseEntity="Pet"/>
@@ -25,8 +25,8 @@
         <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="raca" optional="YES" attributeType="String"/>
         <attribute name="sexo" optional="YES" attributeType="String"/>
-        <relationship name="consultas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Consulta" inverseName="pet" inverseEntity="Consulta"/>
-        <relationship name="exames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exame" inverseName="pet" inverseEntity="Exame"/>
+        <relationship name="consultas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Consulta" inverseName="pet" inverseEntity="Consulta"/>
+        <relationship name="exames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exame" inverseName="pet" inverseEntity="Exame"/>
         <relationship name="vacinas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vacina" inverseName="pet" inverseEntity="Vacina"/>
     </entity>
     <entity name="Vacina" representedClassName="Vacina" syncable="YES" codeGenerationType="class">
@@ -41,7 +41,7 @@
     <entity name="Vermifugo" representedClassName="Vermifugo" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="id_vermifugo" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
     </entity>
 </model>
