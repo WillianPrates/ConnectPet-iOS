@@ -16,33 +16,30 @@ struct PetCard: View {
         VStack(alignment: .leading){
             VStack(spacing: 1) {
                 Image(systemName: "pawprint.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 100)
-                        .padding(9)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 120, height: 100)
+                    .padding(9)
                 Text(pet.nomePet!)
-                        .bold()
-                        .padding(.horizontal)
-                        .foregroundColor(.purple)
-                        .lineLimit(1)
+                    .bold()
+                    .padding(.horizontal)
+                    .foregroundColor(.purple)
+                    .lineLimit(1)
                 Text(pet.dataNascimento?.description ?? "")
                     .padding(.horizontal)
                     .padding(.top,12)
                     .foregroundColor(.vacinasList)
                     .lineLimit(1)
             }
-
         }
-        //pet.dataNascimento?.description ?? ""
         .background(Color(.white))
         .onTapGesture {
-                    mostrarSheetPerfil.toggle()
-                }
-                .sheet(isPresented: $mostrarSheetPerfil, content: {
-                    PerfilPetView(pet: pet)
-                })
+            mostrarSheetPerfil.toggle()
+        }
+        .sheet(isPresented: $mostrarSheetPerfil, content: {
+            PerfilPetView(pet: pet)
+        })
         .cornerRadius(16)
-        
     }
 }
 

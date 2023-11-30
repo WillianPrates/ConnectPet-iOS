@@ -6,57 +6,37 @@
 //
 
 import SwiftUI
-//struct FakeVacina: Identifiable, Hashable {
-//    var id = UUID()
-//    var descricaoVacina: String
-//    var idadeIndicada: Int
-//    var nomeVacina: String
-//    var tipoAnimal: String
-//    var dataVacina: String
-//}
 
 struct NovaVacinaCard: View {
-    
-    @ObservedObject var vacinaViewModel: VacinaViewModel
-
-    private let numberFormatter: NumberFormatter = {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        return numberFormatter
-    }()
+    @Binding var nomeVacina: String
+    @Binding var descricaoVacina: String
+    @Binding var dataVacina: Date
     
     var body: some View {
-        VStack{
-            List{Section(header: Text("Adicionar Nova Vacina")){
+        List{
+            Section(header: Text("Adicionar Nova Vacina")){
                 HStack {
                     Text("Nome da Vacina")
-                        .bold()
-                    Spacer()
-                    TextField("Nome da Vacina", text: $vacinaViewModel.nome)
+                        .frame(maxWidth: 150, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Nome da Vacina", text: $nomeVacina)
                 }
                 HStack {
                     Text("Descrição:")
-                        .bold()
-                    TextField("Descrição da Vacina", text: $vacinaViewModel.descricaoVacina)
+                        .frame(maxWidth: 150, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    TextField("Descrição da Vacina", text: $descricaoVacina)
                 }
                 HStack {
-                    DatePicker("Data de vacina", selection: $vacinaViewModel.dataVacina, displayedComponents: .date)
-                }
-                HStack {
-                    Text("Tipo Animal")
-                        .bold()
-                    TextField("Tipo Animal", text: $vacinaViewModel.tipoAnimal)
+                    Text("Data de vacina")
+                        .frame(maxWidth: 145, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    DatePicker("", selection: $dataVacina, displayedComponents: .date)
                 }
             }
             .listRowBackground(Color.white)
-            }
         }
+        .scrollDisabled(true)
     }
 }
-
-//#Preview {
-//    VStack {
-//        NovaVacinaCard()
-//        Text("Teste")
-//    }
-//}

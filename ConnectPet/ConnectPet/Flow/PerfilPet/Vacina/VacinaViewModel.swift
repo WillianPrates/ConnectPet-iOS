@@ -39,4 +39,17 @@ class VacinaViewModel: ObservableObject {
         // }
     }
     
+    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, vacinas: FetchedResults<Vacina>) {
+        withAnimation {
+            offsets.map { vacinas[$0] }.forEach(vc.delete)
+
+            do {
+                try vc.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    
 }
