@@ -35,8 +35,10 @@ struct NovaVacinaCard: View {
                     DatePicker("", selection: $dataVacina, displayedComponents: .date)
                 }
             }
+            
             .listRowBackground(Color.white)
         }
         .scrollDisabled(true)
+        
     }
 }

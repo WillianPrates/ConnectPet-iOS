@@ -15,11 +15,24 @@ struct PetCard: View {
     var body: some View {
         VStack(alignment: .leading){
             VStack(spacing: 1) {
-                Image(systemName: "pawprint.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 100)
-                    .padding(9)
+                if(pet.especie == "Cachorro"){
+                    Image("cachorroList")
+                        .resizable()
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .scaledToFit()
+                        .frame(width: 120, height: 100)
+                        .padding(9)
+                }
+                else if(pet.especie == "Gato"){
+                    Image("gatoList")
+                        .resizable()
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .scaledToFit()
+                        .frame(width: 120, height: 100)
+                        .padding(9)
+                }
+                
+                
                 Text(pet.nomePet ?? "")
                     .bold()
                     .padding(.horizontal)
@@ -57,3 +70,7 @@ struct PetCard_Previews: PreviewProvider {
 }
 
 
+//ajustar padding perfil view
+//ajustar padding perfil pet view
+//ajustar contraste dos botoes de voltar e etc...
+//ajustar contraste dos botoes da feeed
