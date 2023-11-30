@@ -74,8 +74,10 @@ struct PerfilPetView: View {
             }
             .alert("Tem certeza que deseja excluir os dados do seu pet?", isPresented: $showingAlertDelete) {
                 Button("Sim", role: .destructive) {
+                    viewContext.delete(pet)
                     dismiss()
                     //acao de excluir
+                    
                 }
                 Button("Não", role: .cancel) {}
             } message: {
@@ -93,7 +95,7 @@ struct PerfilPetView: View {
         case .medicamentosList:
             return AnyView(MedicamentoView())
         case .consultaList:
-            return AnyView(ConsultaView())
+            return AnyView(ConsultaView(pet: pet))
         case .cicloParte1List:
             return AnyView(ContentView())
         }

@@ -6,52 +6,44 @@
 //
 
 import SwiftUI
-struct FakeConsulta: Identifiable, Hashable {
-    var id = UUID()
-    var especialista: String
-    var parecerMedico: String
-    var dataConsulta: String
-}
 
 struct NovaConsultaCard: View {
-    @State var consulta: FakeConsulta
+    @Binding var especialista: String
+    @Binding var parecerMedico: String
+    @Binding var dataConsulta: Date
     
     var body: some View {
-        List{Section(header: Text("Adicionar Nova Consulta")){
-            
+        List {
+            Section(header: Text("Adicionar Nova Consulta")) {
             HStack {
                 Text("Especialista:")
                     .bold()
                 Spacer()
-                TextField("Nome do Especialista", text: $consulta.especialista)
+                TextField("Nome do Especialista", text: $especialista)
             }
-            HStack{
-                Text("Data:")
-                    .bold()
-                TextField("Data:", text: $consulta.dataConsulta)
+            HStack {
+                Text("Data de consulta")
+                    .frame(maxWidth: 145, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                DatePicker("", selection: $dataConsulta, displayedComponents: .date)
             }
-            VStack{
+            VStack {
                 HStack {
                     Text("Parecer médico:")
                         .bold()
                     Spacer()
                 }
                 VStack {
-                    MultilineTextView(text: $consulta.parecerMedico)
+                    MultilineTextView(text: $parecerMedico)
                         .frame(height: 80)
                     Spacer()
                 }
-                
             }
             }
             
         .listRowBackground(Color.white)
         }
     }
-}
-
-#Preview {
-    NovaConsultaCard(consulta: FakeConsulta(especialista: "Dra. Letícia", parecerMedico: "Tomar medicação três vezes ao dia. Cuidar o comportamento do pet. Retornar se algo acontecer. ", dataConsulta: "22/10/2023"))
 }
 
 struct MultilineTextView: UIViewRepresentable {

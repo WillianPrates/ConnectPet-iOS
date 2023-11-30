@@ -72,7 +72,6 @@ struct ListaPetView: View {
                             if(pets.count > 0){
                                 PetCard(pet: pet)
                             }
-                            
                         }
                     }.padding(.top, 25)
                     
@@ -99,9 +98,7 @@ struct ListaPetView: View {
             .onAppear {
                 nomeTutor = UserDefaults.standard.string(forKey: "nomeTutor") ?? "Tutor"
             }
-            
         }
-        
     }
 }
 
