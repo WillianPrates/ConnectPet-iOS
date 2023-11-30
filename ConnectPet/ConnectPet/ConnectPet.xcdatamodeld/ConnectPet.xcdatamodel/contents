@@ -17,6 +17,7 @@
         <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="raca" optional="YES" attributeType="String"/>
         <attribute name="sexo" optional="YES" attributeType="String"/>
+        <relationship name="vacinas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vacina" inverseName="pet" inverseEntity="Vacina"/>
     </entity>
     <entity name="Vacina" representedClassName="Vacina" syncable="YES" codeGenerationType="class">
         <attribute name="dataVacina" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -25,6 +26,7 @@
         <attribute name="idadeIndicada" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="tipoAnimal" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="vacinas" inverseEntity="Pet"/>
     </entity>
     <entity name="Vermifugo" representedClassName="Vermifugo" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
