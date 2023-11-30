@@ -32,13 +32,13 @@ struct FeedView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30)
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.vacinasList)
                             }
-                            .frame(width: 180, height: 100)
-                            .background(.laranja)
+                            .frame(width: 180, height: 140)
+                            .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
+                        .opacity(isAnimated ? 1 : 0)
                         
                         Spacer()
                         
@@ -54,10 +54,10 @@ struct FeedView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30)
-                                    .foregroundColor(.green)
+                                    .foregroundColor(.consultasAgendadasList)
                             }
-                            .frame(width: 180, height: 100)
-                            .background(.rosa)
+                            .frame(width: 180, height: 140)
+                            .background(.white)
                             .cornerRadius(10)
                         })
                         .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
@@ -76,10 +76,10 @@ struct FeedView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 30)
-                                    .foregroundColor(.orange)
+                                    .foregroundColor(.red)
                             }
-                            .frame(width: 180, height: 100)
-                            .background(.azul)
+                            .frame(width: 180, height: 140)
+                            .background(.white)
                             .cornerRadius(10)
                         })
                         .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
@@ -98,13 +98,13 @@ struct FeedView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 40)
-                                    .foregroundColor(.purple)
+                                    .foregroundColor(.orange)
                             }
-                            .frame(width: 180, height: 100)
-                            .background(.verde)
+                            .frame(width: 180, height: 140)
+                            .background(.white)
                             .cornerRadius(10)
                         })
-                        .opacity(isAnimated ? 1 : 0) // Configura a opacidade inicial
+                        .opacity(isAnimated ? 1 : 0) 
                     }
                     
                 }
