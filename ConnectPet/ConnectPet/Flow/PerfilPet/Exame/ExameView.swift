@@ -61,8 +61,7 @@ struct ExameView: View {
                     dataExame = Date()
                 } label: {
                     Label("Salvar", systemImage: "")
-                        .tint(.blue)
-                        .bold()
+                        .tint(.black)
                         .padding(.horizontal)
                 }
             })

@@ -26,7 +26,7 @@ struct ConsultaView: View {
     var body: some View {
         VStack{
             NovaConsultaCard(especialista: $especialista, parecerMedico: $parecerMedico, dataConsulta: $dataConsulta)
-                .frame(height: 270)
+                .frame(height: 300)
             
             List{
                 Section(header: Text("Histórico de Consultas")){

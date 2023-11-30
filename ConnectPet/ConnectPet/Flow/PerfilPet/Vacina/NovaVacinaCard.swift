@@ -17,20 +17,20 @@ struct NovaVacinaCard: View {
             Section(header: Text("Adicionar Nova Vacina")){
                 HStack {
                     Text("Nome da Vacina")
-                        .frame(maxWidth: 150, alignment: .leading)
+                        .frame(width: 150, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     
                     TextField("Nome da Vacina", text: $nomeVacina)
                 }
                 HStack {
                     Text("Descrição:")
-                        .frame(maxWidth: 150, alignment: .leading)
+                        .frame(width: 150, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     TextField("Descrição da Vacina", text: $descricaoVacina)
                 }
                 HStack {
                     Text("Data de vacina")
-                        .frame(maxWidth: 145, alignment: .leading)
+                        .frame(width: 145, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     DatePicker("", selection: $dataVacina, displayedComponents: .date)
                 }
@@ -42,3 +42,4 @@ struct NovaVacinaCard: View {
         
     }
 }
+
