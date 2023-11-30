@@ -1,33 +1,32 @@
 //
-//  VacinaViewModel.swift
+//  ExameViewModel.swift
 //  ConnectPet
 //
-//  Created by Foundastion03 on 28/11/23.
+//  Created by Foundastion03 on 30/11/23.
 //
 
 import SwiftUI
 import CoreData
 
-class VacinaViewModel: ObservableObject {
+class ExameViewModel: ObservableObject {
     // MARK: - Fetch
     
     @Published var id = UUID()
-    @Published var descricaoVacina: String = ""
-    @Published var idadeIndicada: Date = Date()
-    @Published var nome: String = ""
-    @Published var tipoAnimal: String = ""
-    @Published var dataVacina: Date = Date()
+    @Published var nomeExame: String = ""
+    @Published var descricaoExame: String = ""
+    @Published var resultadoExame: String = ""
+    @Published var dataExame: Date = Date()
     @Published var pet: Pet = Pet()
     
     func addItem(vc: NSManagedObjectContext) {
         withAnimation {
-            let newVacina = Vacina(context: vc)
-            newVacina.descricao = descricaoVacina
-            newVacina.idadeIndicada = idadeIndicada
-            newVacina.nome = nome
-            newVacina.tipoAnimal = tipoAnimal
-            newVacina.dataVacina = dataVacina
-            newVacina.pet = pet
+            
+            let newExame = Exame(context: vc)
+            newExame.nome = nomeExame
+            newExame.descricao = descricaoExame
+            newExame.resultado = resultadoExame
+            newExame.data = dataExame
+            //newExame.pet = pet
             
             do {
                 try vc.save()
@@ -40,9 +39,9 @@ class VacinaViewModel: ObservableObject {
         }
     }
     
-    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, vacinas: FetchedResults<Vacina>) {
+    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, exames: FetchedResults<Exame>) {
         withAnimation {
-            offsets.map { vacinas[$0] }.forEach(vc.delete)
+            offsets.map { exames[$0] }.forEach(vc.delete)
 
             do {
                 try vc.save()

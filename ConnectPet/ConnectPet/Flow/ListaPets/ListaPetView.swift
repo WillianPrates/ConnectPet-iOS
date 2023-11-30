@@ -102,7 +102,6 @@ struct ListaPetView: View {
     }
 }
 
-
 #Preview {
     ListaPetView()
 }

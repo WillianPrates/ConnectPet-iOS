@@ -31,7 +31,7 @@ struct ConsultaView: View {
             List{
                 Section(header: Text("Histórico de Consultas")){
                     ForEach(consultaFetch, id: \.self){ consulta in
-                        if consulta.pet == pet{
+                        if consulta.pet == pet {
                             HStack{
                                 VStack{
                                     Image(systemName: "heart.text.square")
@@ -75,8 +75,8 @@ struct ConsultaView: View {
         }
         .scrollContentBackground(.hidden)
         .background(corBackground)
-        .toolbar(content: {
-            ToolbarItem(placement: .topBarTrailing, content: {
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button{
                     consultaViewModel.dataConsulta = dataConsulta
                     consultaViewModel.especialista = especialista
@@ -84,13 +84,18 @@ struct ConsultaView: View {
                     consultaViewModel.pet = pet
                     
                     consultaViewModel.addItem(vc: viewContext)
-                    print("Salvar")
-                }label: {
-                    Label("Salvar", systemImage: "")
-                        .tint(.blue)
+                    
+                    especialista = ""
+                    dataConsulta = Date()
+                    parecerMedico = ""
+                } label: {
+                    Text("Salvar")
                 }
-            })
-        })
+            }
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 

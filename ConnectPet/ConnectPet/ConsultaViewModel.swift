@@ -18,8 +18,7 @@ class ConsultaViewModel: ObservableObject {
     @Published var pet: Pet = Pet()
     
     func addItem(vc: NSManagedObjectContext) {
-        // withAnimation {
-        
+        withAnimation {
         let newConsulta = Consulta(context: vc)
         newConsulta.especialista = especialista
         newConsulta.parecerMedico = parecerMedico
@@ -34,12 +33,12 @@ class ConsultaViewModel: ObservableObject {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        // }
+        }
     }
     
-    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, vacinas: FetchedResults<Vacina>) {
+    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, consultas: FetchedResults<Consulta>) {
         withAnimation {
-            offsets.map { vacinas[$0] }.forEach(vc.delete)
+            offsets.map { consultas[$0] }.forEach(vc.delete)
 
             do {
                 try vc.save()
