@@ -9,77 +9,61 @@ import SwiftUI
 
 
 struct VacinaView: View {
-    @Environment(\.managedObjectContext) var viewContext
-    
-//    @FetchRequest(sortDescriptors: []) var vacinas: FetchedResults<Vacina>
+    @State var nomeVacina: String = ""
+    @State var descricaoVacina: String = ""
+    @State var dataVacina: Date = Date()
     
     @StateObject var vacinaViewModel: VacinaViewModel = VacinaViewModel()
-    
+    @Environment(\.managedObjectContext) var viewContext
+
     @FetchRequest(
-            sortDescriptors: [NSSortDescriptor(keyPath: \Vacina.id, ascending: true)],
-            animation: .default) var vacinas: FetchedResults<Vacina>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Vacina.id, ascending: true)],
+        animation: .default) private var vacinasFetch: FetchedResults<Vacina>
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
+    
     var body: some View {
-        VStack{
-            NovaVacinaCard(vacinaViewModel: vacinaViewModel)
-                .frame(height: 220)
-            
+         VStack{
+             NovaVacinaCard(nomeVacina: $nomeVacina, descricaoVacina: $descricaoVacina, dataVacina: $dataVacina)
+                 .frame(maxHeight: 180)
             List{
                 Section(header: Text("Histórico de Vacinas")){
-                    ForEach(vacinas, id: \.id){ vacina in
-                        HStack{
-                            Image(systemName: "syringe")
-                                .resizable()
-                                .frame(width: 25,height: 25)
-                                .foregroundColor(.vacinasList)
-                            VStack {
-                                HStack {
-                                    if let nomeVacina = vacina.nome {
-                                        Text(nomeVacina)
-                                            .bold()
-                                    }
-//                                    Spacer()
-                                }
-                                HStack {
-                                    if let dataVacina = vacina.dataVacina {
-                                        Text(dataVacina.formatted(
-                                            Date.FormatStyle()
-                                                .month(.twoDigits)
-                                                .day(.twoDigits)
-                                                .locale(Locale(identifier: "pt_BR"))
-                                        ))
-                                    }
-//                                    Spacer()
-                                }
-                                if let descricaoVacina = vacina.descricao {
-                                    Text(descricaoVacina)
-                                        .bold()
-                                }
-                            }
-                        }
+                    ForEach(vacinasFetch, id: \.self) { vacina in
+                        ListaVacinasView(nomeVacina: vacina.nome ?? "", descricaoVacina: vacina.descricao ?? "", dataVacina: vacina.dataVacina ?? Date())
                     }
+                    .onDelete(perform: { indexSet in
+                        vacinaViewModel.deleteItems(offsets: indexSet, vc: viewContext, vacinas: vacinasFetch)
+                    })
                 }
             }
             .listStyle(.insetGrouped)
         }
         .scrollContentBackground(.hidden)
         .background(corBackground)
-        .toolbar(content: {
+        .toolbar {
             ToolbarItem(placement: .topBarTrailing, content: {
                 Button {
+                    vacinaViewModel.nome = nomeVacina
+                    vacinaViewModel.descricaoVacina = descricaoVacina
+                    vacinaViewModel.dataVacina = dataVacina
+                    
                     vacinaViewModel.addItem(vc: viewContext)
-                    print("Salvar")
-                }label: {
+                    
+                    nomeVacina = ""
+                    descricaoVacina = ""
+                    dataVacina = Date()
+                } label: {
                     Label("Salvar", systemImage: "")
                         .tint(.blue)
                         .bold()
                         .padding(.horizontal)
-                    
                 }
             })
-        })
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 

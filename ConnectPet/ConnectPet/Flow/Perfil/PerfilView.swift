@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PerfilView: View {
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
-    
     let buttonsDataPerfil: [(systemName: String, title: String, color: Color)] = [
         ("person", "Meu Perfil", .examesList),
         ("bell", "Notificações", .vacinasList),
@@ -17,68 +16,49 @@ struct PerfilView: View {
         ("questionmark.circle", "Ajuda", .consultasAgendadasList),
         ("power", "Sair", .castracaoList)
     ]
-    // pegar imagem, editável, e salvar em user default
     
-    // function
-    let imageKey = "SavedFoto"
-    var imageData: Data?
-    
-    mutating func getImage() {
-        if let data = UserDefaults.standard.data(forKey: "SavedFoto") {
-            if let decoded = try? JSONDecoder().decode(Data.self, from: data){
-                self.imageData = decoded
-                return
-            }
-        }
-    }
+    @State public var mostrarBiblioteca: Bool = false
+    @State private var nomeTutor = UserDefaults.standard.string(forKey: "nomeTutor") ?? "Tutor"
+    @AppStorage("perfilUsuario") var fotoPerfilUsuario : Data = .init(count: 0)
     
     var body: some View {
         NavigationStack{
-            VStack{
+            VStack(alignment: .leading) {
                 HStack{
-                    // Image(uiImage: UIImage(data: imageData))
-                    // usar if let caso vier nulo
-                    Image("fotoperfil")
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 120,height: 120)
-                        .padding(.leading)
-                        .padding(.top)
-                    VStack{
-                        HStack {
-                            Text("Anna")
-                                .font(.title)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal)
-                            Spacer()
-                        }
-                        HStack {
-                            Button {
-                                print("Função adicionar novo pet")
-                            }label: {
-                                Label("Trocar Imagem", systemImage: "")
-                                    .tint(.white)
-                                    .bold()
-                                
-                        }
-                            Spacer()
-                        }
+                    if self.fotoPerfilUsuario.count != 0 {
+                        Image(uiImage: UIImage(data: self.fotoPerfilUsuario)!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 90, height: 90)
+                            .padding(.leading)
+                            .padding(.top)
+                    } else {
+                        Image(systemName: "camera.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 90, height: 90)
+                            .padding(.leading)
+                            .padding(.top)
+                            .foregroundStyle(.white)
                     }
-                    Spacer()
-                }
-                .navigationTitle("Perfil")
-                .toolbar {
-                    ToolbarItem() {
-                        Button {
-                            print("")
-                        }label: {
-                            Label("oi", systemImage: "ellipsis.circle")
-                                .foregroundColor(.black)
                     
+                    VStack(alignment: .leading) {
+                        Text("Olá, \(nomeTutor)!")
+                            .font(.system(size: 25, weight: .medium))
+                        
+                        Button {
+                            self.mostrarBiblioteca.toggle()
+                        } label: {
+                            Text("Mudar foto")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 15))
                         }
                     }
+                    .padding(.top, 20)
                 }
+                
                 List {
                     ForEach(buttonsDataPerfil, id: \.systemName) { buttonDataPerfil in
                         NavigationLink(destination: ContentView()) {
@@ -92,17 +72,20 @@ struct PerfilView: View {
                                     .padding(.leading, 8)
                             }
                         }
-                        .padding(.vertical, 3)
                     }
                 }
-                .scrollContentBackground(.hidden)
+                .scrollDisabled(true)
                 .background(corBackground)
+                .scrollContentBackground(.hidden)
             }
+            .sheet(isPresented: self.$mostrarBiblioteca) {
+                PhotoPicker(show: $mostrarBiblioteca, image: self.$fotoPerfilUsuario)
+            }
+            .navigationTitle("Perfil")
             .background(corBackground)
+            .onAppear {
+                nomeTutor = UserDefaults.standard.string(forKey: "nomeTutor") ?? "Tutor"
+            }
         }
     }
-}
-
-#Preview {
-    PerfilView()
 }

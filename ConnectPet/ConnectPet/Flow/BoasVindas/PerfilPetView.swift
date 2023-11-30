@@ -1,11 +1,10 @@
 import SwiftUI
 
 enum DestinationType {
-    case examesList, vacinasList, medicamentosList, consultasAgendadasList, castracaoList, historicoList, cicloParte1List
+    case examesList, vacinasList, medicamentosList, consultaList, cicloParte1List
 }
 
 struct PerfilPetView: View {
-    
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
@@ -13,31 +12,19 @@ struct PerfilPetView: View {
         ("pencil.and.list.clipboard", "Exames", .blue, .examesList),
         ("syringe", "Vacinas", .green, .vacinasList),
         ("pills", "Medicamentos", .red, .medicamentosList),
-        ("calendar", "Consultas agendadas", .purple, .consultasAgendadasList),
-        ("dog", "Castração", .yellow, .castracaoList),
-        ("heart.text.square", "Histórico de consultas", .orange, .historicoList),
+        ("heart.text.square", "Consultas", .orange, .consultaList),
         ("cat", "Ciclo estral", .pink, .cicloParte1List)
     ]
     
     let pet: Pet
-    
+    @State private var showingAlertDelete = false
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) private var viewContext
     
     //Exames, vacinas, medicamentos e consultas
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
-                Button(action: { }, label: {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(.black)
-                    }
-                })
-                .padding()
-                
-                Divider()
-                
                 VStack {
                     Image("Gatinho")
                         .resizable()
@@ -45,7 +32,7 @@ struct PerfilPetView: View {
                         .frame(width: 175)
                         .clipShape(Circle())
                     
-                    Text(pet.nomePet ?? "") // nome
+                    Text(pet.nomePet ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                     
@@ -75,7 +62,25 @@ struct PerfilPetView: View {
                 .scrollDisabled(true)
             }
             .background(corBackground)
-            .navigationBarHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showingAlertDelete.toggle()
+                    }) {
+                        Image(systemName: "eraser.line.dashed")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            .alert("Tem certeza que deseja excluir os dados do seu pet?", isPresented: $showingAlertDelete) {
+                Button("Sim", role: .destructive) {
+                    dismiss()
+                    //acao de excluir
+                }
+                Button("Não", role: .cancel) {}
+            } message: {
+                Text("Essa ação não poderá ser desfeita")
+            }
         }
     }
     
@@ -87,11 +92,7 @@ struct PerfilPetView: View {
             return AnyView(VacinaView())
         case .medicamentosList:
             return AnyView(ContentView())
-        case .consultasAgendadasList:
-            return AnyView(ContentView())
-        case .castracaoList:
-            return AnyView(ContentView())
-        case .historicoList:
+        case .consultaList:
             return AnyView(ContentView())
         case .cicloParte1List:
             return AnyView(ContentView())
@@ -99,8 +100,3 @@ struct PerfilPetView: View {
     }
 }
 
-//struct PerfilPetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PerfilPetView(pet: Pet()))
-//    }
-//}

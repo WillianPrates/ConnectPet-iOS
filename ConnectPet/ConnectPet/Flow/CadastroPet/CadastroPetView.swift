@@ -60,12 +60,10 @@ struct CadastroPetView: View {
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .padding(.vertical, 30)
-                
+                    .padding(.vertical, 15)
                 }
                 .textCase(nil)
                 .listRowBackground(Color.white)
-                
                 
                 Section {
                     Toggle("Castrado", isOn: $cadastroPetViewModel.castrado)
@@ -103,6 +101,7 @@ struct CadastroPetView: View {
                 .listRowBackground(Color.white)
             }
             .background(corBackground)
+            .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
             .navigationTitle("Novo pet")
             .navigationBarTitleDisplayMode(.inline)
@@ -126,7 +125,6 @@ struct CadastroPetView: View {
                     }
                 }
             }
-
         }
     }
 }
