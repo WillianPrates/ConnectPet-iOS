@@ -1,39 +1,30 @@
 import SwiftUI
 
+enum DestinationType {
+    case examesList, vacinasList, medicamentosList, consultaList, cicloParte1List
+}
+
 struct PerfilPetView: View {
+    
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
-    let buttonsData: [(systemName: String, title: String, color: Color)] = [
-        ("pencil.and.list.clipboard", "Exames", .examesList),
-        ("syringe", "Vacinas", .vacinasList),
-        ("pills", "Medicamentos", .medicamentosList),
-        ("calendar", "Consultas", .consultasAgendadasList),
-        ("dog", "Castração", .castracaoList),
-        ("cat", "Ciclo estral", .cicloParte1List)
+    let buttonsData: [(systemName: String, title: String, color: Color, destination: DestinationType)] = [
+        ("pencil.and.list.clipboard", "Exames", .blue, .examesList),
+        ("syringe", "Vacinas", .green, .vacinasList),
+        ("pills", "Medicamentos", .red, .medicamentosList),
+        ("heart.text.square", "Consultas", .orange, .consultaList),
+        ("cat", "Ciclo estral", .pink, .cicloParte1List)
     ]
     
     let pet: Pet
-    
+    @State private var showingAlertDelete = false
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) private var viewContext
     
-    
     //Exames, vacinas, medicamentos e consultas
-    
-    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Button(action: { }, label: {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(.black)
-                    }
-                })
-                .padding()
-                
-                Divider()
-                
                 VStack {
                     Image("Gatinho")
                         .resizable()
@@ -41,7 +32,7 @@ struct PerfilPetView: View {
                         .frame(width: 175)
                         .clipShape(Circle())
                     
-                    Text(pet.nomePet ?? "") // nome
+                    Text(pet.nomePet ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                     
@@ -49,12 +40,11 @@ struct PerfilPetView: View {
                         .foregroundColor(Color("GrayBack"))
                         .font(.title3)
                 }
-                
                 .padding()
                 
                 List {
                     ForEach(buttonsData, id: \.systemName) { buttonData in
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: destinationView(for: buttonData.destination)) {
                             HStack {
                                 Image(systemName: buttonData.systemName)
                                     .foregroundColor(buttonData.color)
@@ -71,33 +61,42 @@ struct PerfilPetView: View {
                 .scrollContentBackground(.hidden)
                 .scrollDisabled(true)
             }
-            
             .background(corBackground)
-            .navigationBarHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showingAlertDelete.toggle()
+                    }) {
+                        Image(systemName: "eraser.line.dashed")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            .alert("Tem certeza que deseja excluir os dados do seu pet?", isPresented: $showingAlertDelete) {
+                Button("Sim", role: .destructive) {
+                    dismiss()
+                    //acao de excluir
+                }
+                Button("Não", role: .cancel) {}
+            } message: {
+                Text("Essa ação não poderá ser desfeita")
+            }
         }
     }
     
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { pet[$0].forEach(viewContext.delete)
-//                
-//                do {
-//                    try viewContext.save()
-//                } catch {
-//                    // Replace this implementation with code to handle the error appropriately.
-//                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                    let nsError = error as NSError
-//                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//                }
-//            }
-//        }
-//    }
-}
-
-struct PerfilPetView_Previews: PreviewProvider {
-    static var previews: some View {
-        let persistenceController = PersistenceController.shared
-        PerfilPetView(pet: Pet(context: persistenceController.container.viewContext))
-            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+    func destinationView(for destination: DestinationType) -> some View {
+        switch (destination){
+        case .examesList:
+            return AnyView(ContentView())
+        case .vacinasList:
+            return AnyView(VacinaView())
+        case .medicamentosList:
+            return AnyView(ContentView())
+        case .consultaList:
+            return AnyView(ContentView())
+        case .cicloParte1List:
+            return AnyView(ContentView())
+        }
     }
 }
+

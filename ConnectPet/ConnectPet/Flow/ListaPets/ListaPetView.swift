@@ -11,7 +11,7 @@ var botao: Bool = false
 
 struct ListaPetView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pet.id, ascending: true)],
         animation: .default)
@@ -23,22 +23,22 @@ struct ListaPetView: View {
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
     let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
         NavigationStack {
             VStack{
                 ScrollView {
-                    if pets.count >= 0 {
-                        LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(pets, id: \.self) { pet in
-                                PetCard(pet: pet)
-                            }
-                            
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(pets, id: \.self) { pet in
+                            PetCard(pet: pet)
+
                         }
+                        .background(.orange)
                     }
+                    
                 }
             }
             .frame(maxWidth: .infinity)
@@ -59,7 +59,7 @@ struct ListaPetView: View {
             .sheet(isPresented: $mostrarSheet, content: {
                 CadastroPetView()
             })
-        
+            
         }
         
     }
