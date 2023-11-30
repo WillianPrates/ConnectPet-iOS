@@ -6,51 +6,45 @@
 //
 
 import SwiftUI
-struct FakeExame: Identifiable, Hashable {
-    var id = UUID()
-    var descricaoExame: String
-    var resultadoExame: String
-    var nomeExame: String
-    var dataExame: String
-}
 
 struct NovoExameCard: View {
-    @State var exame: FakeExame
-    
+    @Binding var nomeExame: String
+    @Binding var descricaoExame: String
+    @Binding var resultadoExame: String
+    @Binding var dataExame: Date
+
     var body: some View {
-        VStack{
-            List{Section(header: Text("Adicionar Novo Exame")){
-                
+        List {
+            Section(header: Text("Adicionar Novo Exame")) {
                 HStack {
                     Text("Nome do Exame")
-                        .bold()
-                    Spacer()
-                    TextField("Nome do Exame", text: $exame.nomeExame)
+                        .frame(maxWidth: 145, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Nome do exame", text: $nomeExame)
                 }
                 HStack{
                     Text("Descrição:")
-                        .bold()
-                    TextField("Descrição:", text: $exame.descricaoExame)
+                        .frame(maxWidth: 145, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Descrição do exame", text: $descricaoExame)
                 }
                 
                 HStack {
                     Text ("Resultado: ")
-                        .bold()
-                    Spacer()
-                    TextField("Resultado:", text: $exame.resultadoExame)
+                        .frame(maxWidth: 145, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Resultado do exame", text: $resultadoExame)
                 }
                 HStack{
                     Text("Data:")
-                        .bold()
-                    TextField("Data:", text: $exame.dataExame)
+                    DatePicker("", selection: $dataExame, displayedComponents: .date)
                 }
-            }.listRowBackground(Color.white)
             }
+            .listRowBackground(Color.white)
         }
+        .scrollDisabled(true)
     }
 }
-
-#Preview {
-    NovoExameCard(exame: FakeExame(descricaoExame: "bla bla bla", resultadoExame: "positivo", nomeExame: "Rotina", dataExame: "29/11/2023"))
-}
-
