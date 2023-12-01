@@ -22,6 +22,7 @@ struct ConsultaView: View {
                 .frame(height: 270)
 
             List{
+<<<<<<< Updated upstream
                 Section(header: Text("Histórico de Consultas")){
                 ForEach(consulta, id: \.self){ consulta in
                     HStack{
@@ -42,6 +43,45 @@ struct ConsultaView: View {
                                 Text(consulta.especialista)
                                     .padding(.top,3)
                                 Spacer()
+=======
+                Section(header: Text("Histórico de Consultasssssss")){
+                    ForEach(consultaFetch, id: \.self){ consulta in
+                        if consulta.pet == pet {
+                            HStack{
+                                VStack{
+                                    Image(systemName: "heart.text.square")
+                                        .resizable()
+                                        .frame(width: 25,height: 25)
+                                        .foregroundColor(.historicoList)
+                                        .padding(.top)
+                                    Spacer()
+                                }
+                                VStack {
+                                    HStack {
+                                        Text("Especialista:")
+                                            .bold()
+                                            .padding(.top,3)
+                                        Text(consulta.especialista ?? "")
+                                            .padding(.top,3)
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("Data:")
+                                            .bold()
+                                        Text("\(consulta.dataConsulta ?? Date())")
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("Parecer médico:")
+                                            .bold()
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        Text(consulta.parecerMedico ?? "")
+                                        Spacer()
+                                    }
+                                }
+>>>>>>> Stashed changes
                             }
                             HStack {
                                 Text("Data:")
