@@ -9,22 +9,33 @@ struct OnBoarding4: View {
         VStack {
             Spacer()
             VStack(alignment: .leading) {
-                Text("Olá tutor! 😄")
+                Text("Olá amante de pet!")
                     .font(.system(size: 30, weight: .bold))
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 40)
                 
-                Text("Para você ter uma melhor experiência gostaríamos de saber")
+                Text("Para tornar a sua experiência ainda mais personalizada, gostaríamos de te conhecer melhor. 😊")
                     .font(.system(size: 20))
                     .padding(.bottom, 32)
                 
-                Text("Como você gostaria de ser chamado?")
+                Text("Diga-nos como gostaria de ser chamado:")
                     .font(.system(size: 16, weight: .bold))
                 
                 TextField("Seu nome", text: $nomeTutor)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 336, height: 56)
+                
+                if nomeTutor != "" {
+                    VStack(spacing: 8) {
+                        Text("Perfeito \(nomeTutor)!")
+                            .font(.system(size: 20))
+                        Text("Agora toque em começar e deixe a magia acontecer! 🌟")
+                            .font(.system(size: 18))
+                    }
+                    .padding(.top)
+                    //.padding(.horizontal)
+                    .multilineTextAlignment(.center)
+                }
             }
-            
             Spacer()
             
             Button(action: {
@@ -32,7 +43,7 @@ struct OnBoarding4: View {
                 UserDefaults.standard.set(false, forKey: "firstTimeHere")
             }, label: {
                 VStack {
-                    Text("Salvar")
+                    Text("Começar")
                         .font(.system(size: 20, weight: .semibold))
                 }
                 .foregroundStyle(.white)
@@ -40,6 +51,8 @@ struct OnBoarding4: View {
                 .background(.corBotao)
                 .cornerRadius(20)
             })
+            .disabled(nomeTutor == "")
+            .opacity(nomeTutor == "" ? 0.5 : 1.0)
             .padding(.bottom, 60)
         }
         .padding(.horizontal)
@@ -48,3 +61,4 @@ struct OnBoarding4: View {
         }
     }
 }
+

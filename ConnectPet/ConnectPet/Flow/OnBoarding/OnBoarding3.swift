@@ -8,7 +8,7 @@ struct OnBoarding3: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 281, height: 399)
-            Text("Compartilhe o histórico do seu pet com qualquer pessoa")
+            Text("Dessa forma, você terá sempre à mão o histórico de saúde completo, garantindo um cuidado personalizado e eficiente")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(.corTexto)
                 .frame(width: 250)

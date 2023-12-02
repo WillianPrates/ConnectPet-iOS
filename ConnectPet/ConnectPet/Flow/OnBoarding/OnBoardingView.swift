@@ -15,11 +15,8 @@ struct OnboardingView: View {
                 OnBoarding2()
                     .tag(1)
                 
-                OnBoarding3()
-                    .tag(2)
-                
                 OnBoarding4(onboarding: $onboarding)
-                    .tag(3)
+                    .tag(2)
             }
             .background(corBackground)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

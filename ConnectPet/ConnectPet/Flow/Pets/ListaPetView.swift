@@ -70,13 +70,13 @@ struct ListaPetView: View {
             .scrollIndicators(.hidden)
             .frame(maxWidth: .infinity)
             .background(corBackground)
-            .navigationTitle("Olá, \(nomeTutor) 😃")
+            .navigationTitle("Olá, \(nomeTutor)!")
             .toolbar {
                 ToolbarItem {
                     Button(action: {
                         mostrarSheet.toggle()
                     }) {
-                        Label("Add Item", systemImage: "plus")
+                        Image("plus")
                     }
                 }
             }
