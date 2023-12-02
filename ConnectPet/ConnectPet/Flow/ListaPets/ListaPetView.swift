@@ -1,25 +1,16 @@
-//
-//  ListaPetView.swift
-//  ConnectPet
-//
-//  Created by Foundation02 on 22/11/23.
-//
 
 import SwiftUI
 
 var botao: Bool = false
 
 struct ListaPetView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @State private var mostrarSheet = false
+    @State private var mostrarSheetPerfil = false
     @State private var nomeTutor = UserDefaults.standard.string(forKey: "nomeTutor") ?? "Tutor"
-   
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pet.id, ascending: true)],
-        animation: .default)
-    
-    private var pets: FetchedResults<Pet>
-    
-    @State private var mostrarSheet = false
+        animation: .default) private var pets: FetchedResults<Pet>
+    @Environment(\.managedObjectContext) private var viewContext
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
@@ -30,53 +21,53 @@ struct ListaPetView: View {
     
     var body: some View {
         NavigationStack {
-            VStack{
-                Divider()
-                if(pets.count > 0) {
-                    HStack(){
-                        Text("Pets Cadastrados:")
-                            .bold()
-                            .padding()
-                            .fontWeight(.light)
-                        Spacer()
-                        
-                    }
-                }
-                
+            VStack {
                 if pets.count == 0 {
                     ZStack {
-
                         RoundedRectangle(cornerRadius: 20)
                             .frame(width: 330, height: 150)
                             .foregroundColor(.white)
                             .opacity(0.3)
-
-                        VStack(spacing: 5) {
+                        
+                        VStack(spacing: 8) {
                             Text("Sem pet cadastrado!")
                                 .font(.headline)
                                 .foregroundColor(.black)
-
+                            
                             Text("Adicione seu animal de estimação para aproveitar todas as funcionalidades.")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                                 .frame(width: 300)
-                        }.padding()
+                        }
+                    }
+                    .onTapGesture {
+                        mostrarSheet.toggle()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-
-
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(pets, id: \.self) { pet in
-                            if(pets.count > 0){
-                                PetCard(pet: pet)
+                else {
+                    ScrollView {
+                        HStack {
+                            Text("Pets Cadastrados:")
+                                .bold()
+                                .padding(.vertical, 5)
+                                .fontWeight(.light)
+                            Spacer()
+                        }
+                        
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(pets, id: \.self) { pet in
+                                if(pets.count > 0){
+                                    PetCard(especie: pet.especie ?? "", nomePet: pet.nomePet ?? "", dataNascimento: pet.dataNascimento ?? Date(), mostrarSheetPerfil: mostrarSheetPerfil, pet: pet)
+                                }
                             }
                         }
-                    }.padding(.top, 25)
-                    
+                        .padding(.top, 5)
+                    }
                 }
             }
+            .padding(.horizontal)
+            .scrollIndicators(.hidden)
             .frame(maxWidth: .infinity)
             .background(corBackground)
             .navigationTitle("Olá, \(nomeTutor) 😃")
@@ -97,8 +88,4 @@ struct ListaPetView: View {
             }
         }
     }
-}
-
-#Preview {
-    ListaPetView()
 }

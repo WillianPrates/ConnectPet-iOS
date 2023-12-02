@@ -1,13 +1,7 @@
-//
-//  NovaVacinaCard.swift
-//  ConnectPet
-//
-//  Created by Foundation02 on 27/11/23.
-//
 
 import SwiftUI
 
-struct NovaVacinaCard: View {
+struct CardNovaVacina: View {
     @Binding var nomeVacina: String
     @Binding var descricaoVacina: String
     @Binding var dataVacina: Date
@@ -16,7 +10,7 @@ struct NovaVacinaCard: View {
         List{
             Section(header: Text("Adicionar Nova Vacina")){
                 HStack {
-                    Text("Nome da Vacina")
+                    Text("Nome da Vacina:")
                         .frame(width: 150, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     
@@ -29,17 +23,15 @@ struct NovaVacinaCard: View {
                     TextField("Descrição da Vacina", text: $descricaoVacina)
                 }
                 HStack {
-                    Text("Data de vacina")
+                    Text("Data de vacina:")
                         .frame(width: 145, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     DatePicker("", selection: $dataVacina, displayedComponents: .date)
                 }
             }
-            
             .listRowBackground(Color.white)
         }
         .scrollDisabled(true)
-        
     }
 }
 

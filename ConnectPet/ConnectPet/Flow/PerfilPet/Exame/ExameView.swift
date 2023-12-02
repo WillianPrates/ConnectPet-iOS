@@ -1,9 +1,3 @@
-//
-//  ExameView.swift
-//  ConnectPet
-//
-//  Created by Foundation02 on 28/11/23.
-//
 
 import SwiftUI
 
@@ -13,10 +7,8 @@ struct ExameView: View {
     @State var resultadoExame: String = ""
     @State var dataExame: Date = Date()
     @State var pet: Pet
-    
     @StateObject var exameViewModel: ExameViewModel = ExameViewModel()
     @Environment(\.managedObjectContext) var viewContext
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Exame.id, ascending: true)],
         animation: .default) private var examesFetch: FetchedResults<Exame>
@@ -25,14 +17,14 @@ struct ExameView: View {
     
     var body: some View {
         VStack{
-            NovoExameCard(nomeExame: $nomeExame, descricaoExame: $descricaoExame, resultadoExame: $resultadoExame, dataExame: $dataExame)
+            CardNovoExame(nomeExame: $nomeExame, descricaoExame: $descricaoExame, resultadoExame: $resultadoExame, dataExame: $dataExame)
                 .frame(maxHeight: 250)
             
             List {
                 Section(header: Text("Histórico de Exames")){
                     ForEach(examesFetch, id: \.self) { exame in
                         if exame.pet == pet {
-                            ListaExameView(nomeExame: exame.nome ?? "", descricaoExame: exame.descricao ?? "", resultadoExame: exame.resultado ?? "", dataExame: exame.data ?? Date())
+                            CardListaExame(nomeExame: exame.nome ?? "", descricaoExame: exame.descricao ?? "", resultadoExame: exame.resultado ?? "", dataExame: exame.data ?? Date())
                         }
                     }
                     .onDelete(perform: { indexSet in
@@ -65,9 +57,6 @@ struct ExameView: View {
                         .padding(.horizontal)
                 }
             })
-        }
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 }

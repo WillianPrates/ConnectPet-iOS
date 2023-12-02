@@ -2,26 +2,24 @@
 import SwiftUI
 import CoreData
 
-class VacinaViewModel: ObservableObject {
+class MedicamentoViewModel: ObservableObject {
     // MARK: - Fetch
     
     @Published var id = UUID()
-    @Published var descricaoVacina: String = ""
-    @Published var idadeIndicada: Date = Date()
-    @Published var nome: String = ""
-    @Published var tipoAnimal: String = ""
-    @Published var dataVacina: Date = Date()
+    @Published var medicamento: String = ""
+    @Published var descricao: String = ""
+    @Published var data: Date = Date()
+    @Published var horario: Date = Date()
     @Published var pet: Pet = Pet()
     
     func addItem(vc: NSManagedObjectContext) {
         withAnimation {
-            let newVacina = Vacina(context: vc)
-            newVacina.descricao = descricaoVacina
-            newVacina.idadeIndicada = idadeIndicada
-            newVacina.nome = nome
-            newVacina.tipoAnimal = tipoAnimal
-            newVacina.dataVacina = dataVacina
-            newVacina.pet = pet
+            let newMedicamento = Medicamento(context: vc)
+            newMedicamento.nome = medicamento
+            newMedicamento.descricao = descricao
+            newMedicamento.data = data
+            newMedicamento.horario = horario
+            newMedicamento.pet = pet
             
             do {
                 try vc.save()
@@ -34,9 +32,9 @@ class VacinaViewModel: ObservableObject {
         }
     }
     
-    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, vacinas: FetchedResults<Vacina>) {
+    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, medicamentos: FetchedResults<Medicamento>) {
         withAnimation {
-            offsets.map { vacinas[$0] }.forEach(vc.delete)
+            offsets.map { medicamentos[$0] }.forEach(vc.delete)
             
             do {
                 try vc.save()
@@ -47,3 +45,4 @@ class VacinaViewModel: ObservableObject {
         }
     }
 }
+

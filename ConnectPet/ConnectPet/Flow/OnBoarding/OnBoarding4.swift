@@ -1,16 +1,10 @@
-//
-//  OnBoarding4.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 29/11/23.
-//
 
 import SwiftUI
 
 struct OnBoarding4: View {
     @Binding var onboarding: Bool
     @State var nomeTutor: String = ""
-        
+    
     var body: some View {
         VStack {
             Spacer()
@@ -54,4 +48,3 @@ struct OnBoarding4: View {
         }
     }
 }
-

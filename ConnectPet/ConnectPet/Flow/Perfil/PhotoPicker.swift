@@ -1,9 +1,3 @@
-//
-//  PhotoPicker.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 30/11/23.
-//
 
 import SwiftUI
 

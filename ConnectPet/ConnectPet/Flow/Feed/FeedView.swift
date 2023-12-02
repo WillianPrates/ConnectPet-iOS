@@ -2,6 +2,8 @@ import SwiftUI
 
 struct FeedView: View {
     @State private var selectedDate = Date()
+    @State var mostrarCartilhaView: Bool = false
+    @State var mostrarHistoricoView: Bool = false
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     let buttonWidth: CGFloat = 150
@@ -10,17 +12,15 @@ struct FeedView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
-                    // Adicione o DatePicker acima dos botões
                     DatePicker("", selection: $selectedDate, displayedComponents: .date)
                         .datePickerStyle(.graphical)
                         .background(Color.white)
                         .cornerRadius(10)
-                    
                         .tint(.purpleButtonTab)
                     
                     HStack {
                         Button(action: {
-                            print("Botão pressionado!")
+                            mostrarCartilhaView.toggle()
                         }, label: {
                             VStack {
                                 Text("Cartilha de Vacinação")
@@ -30,19 +30,16 @@ struct FeedView: View {
                                 Image(systemName: "syringe")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 30)
-                                    .foregroundColor(.vacinasList)
+                                    .frame(width: 25)
+                                    .foregroundColor(.consultasAgendadasList)
                             }
-                            .frame(width: 180, height: 140)
-                            .background(.white)
+                            .frame(width: 170, height: 110)
+                            .background(.laranja)
                             .cornerRadius(10)
                         })
-                        
-                        
                         Spacer()
-                        
                         Button(action: {
-                            print("Botão pressionado!")
+                            mostrarHistoricoView.toggle()
                         }, label: {
                             VStack {
                                 Text("Histórico de Consultas")
@@ -52,11 +49,11 @@ struct FeedView: View {
                                 Image(systemName: "calendar")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 30)
+                                    .frame(width: 20)
                                     .foregroundColor(.consultasAgendadasList)
                             }
-                            .frame(width: 180, height: 140)
-                            .background(.white)
+                            .frame(width: 170, height: 110)
+                            .background(.rosa)
                             .cornerRadius(10)
                         })
                     }
@@ -73,16 +70,14 @@ struct FeedView: View {
                                 Image(systemName: "pencil.and.list.clipboard")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 30)
-                                    .foregroundColor(.red)
+                                    .frame(width: 20)
+                                    .foregroundColor(.consultasAgendadasList)
                             }
-                            .frame(width: 180, height: 140)
-                            .background(.white)
+                            .frame(width: 170, height: 110)
+                            .background(.azul)
                             .cornerRadius(10)
                         })
-                        
                         Spacer()
-                        
                         Button(action: {
                             print("Botão pressionado!")
                         }, label: {
@@ -94,31 +89,27 @@ struct FeedView: View {
                                 Image(systemName: "pills")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 40)
-                                    .foregroundColor(.orange)
+                                    .frame(width: 30)
+                                    .foregroundColor(.consultasAgendadasList)
                             }
-                            .frame(width: 180, height: 140)
-                            .background(.white)
+                            .frame(width: 170, height: 110)
+                            .background(.verde)
                             .cornerRadius(10)
                         })
-                        
                     }
-                    
                 }
                 .padding(.horizontal)
-                .padding(.top, 8)
-                .padding(.bottom, 15)
             }
+            .scrollIndicators(.hidden)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle("Feed")
             .background(corBackground)
-        
-            
+            .sheet(isPresented: $mostrarCartilhaView, content: {
+                CartilhaDeVacinaView()
+            })
+            .sheet(isPresented: $mostrarHistoricoView, content: {
+                HistoricoConsultaView()
+            })
         }
-    }
-}
-
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
     }
 }

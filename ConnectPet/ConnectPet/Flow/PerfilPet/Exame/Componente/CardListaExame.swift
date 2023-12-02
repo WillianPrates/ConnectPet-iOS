@@ -1,29 +1,24 @@
-//
-//  ListaVacinasView.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 30/11/23.
-//
 
 import SwiftUI
 
-struct ListaVacinasView: View {
-    @State var nomeVacina: String
-    @State var descricaoVacina: String
-    @State var dataVacina: Date
+struct CardListaExame: View {
+    @State var nomeExame: String
+    @State var descricaoExame: String
+    @State var resultadoExame: String
+    @State var dataExame: Date
     
     var body: some View {
         HStack(spacing: 24) {
-            Image(systemName: "syringe")
+            Image(systemName: "pencil.and.list.clipboard")
                 .resizable()
                 .frame(width: 25,height: 25)
                 .foregroundColor(.vacinasList)
             VStack(alignment: .leading) {
                 HStack {
-                    Text(nomeVacina)
+                    Text(nomeExame)
                         .bold()
                     Spacer()
-                    Text(dataVacina.formatted(
+                    Text(dataExame.formatted(
                         Date.FormatStyle()
                             .month(.twoDigits)
                             .day(.twoDigits)
@@ -31,7 +26,11 @@ struct ListaVacinasView: View {
                     ))
                     .bold()
                 }
-                Text(descricaoVacina)
+                Text(resultadoExame)
+                    .lineLimit(2)
+                    .font(.system(size: 12))
+                
+                Text(descricaoExame)
                     .lineLimit(2)
                     .font(.system(size: 12))
             }
@@ -39,7 +38,6 @@ struct ListaVacinasView: View {
         .font(.system(size: 16))
         .padding(.leading, 5)
         .padding(.trailing)
-        .frame(height: 50)
+        .frame(height: 80)
     }
 }
-

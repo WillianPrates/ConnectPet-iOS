@@ -1,11 +1,11 @@
 import SwiftUI
 
-enum DestinationType {
-    case examesList, vacinasList, medicamentosList, consultaList, cicloParte1List
-}
-
 struct PerfilPetView: View {
+    @State private var showingAlertDelete = false
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) private var viewContext
     
+    let pet: Pet
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
     let buttonsData: [(systemName: String, title: String, color: Color, destination: DestinationType)] = [
@@ -13,27 +13,19 @@ struct PerfilPetView: View {
         ("syringe", "Vacinas", .green, .vacinasList),
         ("pills", "Medicamentos", .red, .medicamentosList),
         ("heart.text.square", "Consultas", .orange, .consultaList),
-        ("cat", "Ciclo estral", .pink, .cicloParte1List)
     ]
     
-    let pet: Pet
-    @State private var showingAlertDelete = false
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    //Exames, vacinas, medicamentos e consultas
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 VStack {
-                    if(pet.especie == "Gato"){
+                    if(pet.especie == "Gato") {
                         Image("gatoList")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 175)
                             .clipShape(Circle())
-                    }
-                    else{
+                    } else {
                         Image("cachorroList")
                             .resizable()
                             .scaledToFit()
@@ -44,6 +36,7 @@ struct PerfilPetView: View {
                     Text(pet.nomePet ?? "")
                         .font(.title)
                         .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                     
                     Text(pet.raca ?? "")
                         .foregroundColor(Color("GrayBack"))
@@ -85,8 +78,6 @@ struct PerfilPetView: View {
                 Button("Sim", role: .destructive) {
                     viewContext.delete(pet)
                     dismiss()
-                    //acao de excluir
-                    
                 }
                 Button("Não", role: .cancel) {}
             } message: {
@@ -102,14 +93,13 @@ struct PerfilPetView: View {
         case .vacinasList:
             return AnyView(VacinaView(pet: pet))
         case .medicamentosList:
-            return AnyView(MedicamentoView())
+            return AnyView(MedicamentoView(pet: pet))
         case .consultaList:
             return AnyView(ConsultaView(pet: pet))
-        case .cicloParte1List:
-            return AnyView(ContentView())
         }
     }
 }
 
-
-
+enum DestinationType {
+    case examesList, vacinasList, medicamentosList, consultaList
+}

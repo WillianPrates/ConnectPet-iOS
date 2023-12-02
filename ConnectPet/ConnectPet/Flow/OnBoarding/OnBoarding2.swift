@@ -1,9 +1,3 @@
-//
-//  OnBoarding2.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 29/11/23.
-//
 
 import SwiftUI
 
@@ -20,8 +14,4 @@ struct OnBoarding2: View {
                 .frame(width: 250)
         }
     }
-}
-
-#Preview {
-    OnBoarding2()
 }

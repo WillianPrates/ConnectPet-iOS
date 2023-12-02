@@ -1,9 +1,3 @@
-//
-//  EnumCadastroPet.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 24/11/23.
-//
 
 import Foundation
 
@@ -58,54 +52,54 @@ enum Sexo: String, CaseIterable, Identifiable {
 }
 
 enum RacaCachorro: String, CaseIterable, Identifiable {
-        case akita
-        case beagle
-        case boxer
-        case chihuahua
-        case dachshund
-        case doberman
-        case frenchBulldog
-        case germanShepherd
-        case goldenRetriever
-        case labradorRetriever
-        case maltese
-        case pomeranian
-        case poodle
-        case pug
-        case rottweiler
-        case saintBernard
-        case semRacaDefinida
-        case siberianHusky
-        case yorkshireTerrier
-
-        var id: Self {
-            self
-        }
-
-        var title: String {
-            switch self {
-            case .akita: return "Akita"
-            case .beagle: return "Beagle"
-            case .boxer: return "Boxer"
-            case .chihuahua: return "Chihuahua"
-            case .dachshund: return "Dachshund"
-            case .doberman: return "Doberman"
-            case .frenchBulldog: return "French Bulldog"
-            case .germanShepherd: return "German Shepherd"
-            case .goldenRetriever: return "Golden Retriever"
-            case .labradorRetriever: return "Labrador Retriever"
-            case .maltese: return "Maltese"
-            case .pomeranian: return "Pomeranian"
-            case .poodle: return "Poodle"
-            case .pug: return "Pug"
-            case .rottweiler: return "Rottweiler"
-            case .saintBernard: return "Saint Bernard"
-            case .semRacaDefinida: return "Sem Raça Definida"
-            case .siberianHusky: return "Siberian Husky"
-            case .yorkshireTerrier: return "Yorkshire Terrier"
-            }
+    case akita
+    case beagle
+    case boxer
+    case chihuahua
+    case dachshund
+    case doberman
+    case frenchBulldog
+    case germanShepherd
+    case goldenRetriever
+    case labradorRetriever
+    case maltese
+    case pomeranian
+    case poodle
+    case pug
+    case rottweiler
+    case saintBernard
+    case semRacaDefinida
+    case siberianHusky
+    case yorkshireTerrier
+    
+    var id: Self {
+        self
+    }
+    
+    var title: String {
+        switch self {
+        case .akita: return "Akita"
+        case .beagle: return "Beagle"
+        case .boxer: return "Boxer"
+        case .chihuahua: return "Chihuahua"
+        case .dachshund: return "Dachshund"
+        case .doberman: return "Doberman"
+        case .frenchBulldog: return "French Bulldog"
+        case .germanShepherd: return "German Shepherd"
+        case .goldenRetriever: return "Golden Retriever"
+        case .labradorRetriever: return "Labrador Retriever"
+        case .maltese: return "Maltese"
+        case .pomeranian: return "Pomeranian"
+        case .poodle: return "Poodle"
+        case .pug: return "Pug"
+        case .rottweiler: return "Rottweiler"
+        case .saintBernard: return "Saint Bernard"
+        case .semRacaDefinida: return "Sem Raça Definida"
+        case .siberianHusky: return "Siberian Husky"
+        case .yorkshireTerrier: return "Yorkshire Terrier"
         }
     }
+}
 
 
 enum RacaGato: String, CaseIterable, Identifiable {
@@ -127,11 +121,11 @@ enum RacaGato: String, CaseIterable, Identifiable {
     case siamese
     case sphynx
     case turkishAngora
-
+    
     var id: Self {
         self
     }
-
+    
     var title: String {
         switch self {
         case .abyssinian: return "Abyssinian"
@@ -155,5 +149,3 @@ enum RacaGato: String, CaseIterable, Identifiable {
         }
     }
 }
-
-

@@ -1,18 +1,13 @@
-//
-//  CadastroView.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 23/11/23.
-//
 
 import SwiftUI
 
 struct CadastroPetView: View {
+    @State var nomePet: String = ""
+    @State var dataNascimento: Date = Date()
+    @State var estaAnimando: Bool = false
     @StateObject private var cadastroPetViewModel: CadastroPetViewModel = CadastroPetViewModel()
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
-    
-    @State var estaAnimando: Bool = false
     
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
@@ -21,12 +16,12 @@ struct CadastroPetView: View {
         numberFormatter.numberStyle = .decimal
         return numberFormatter
     }()
-
+    
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Nome do pet", text: $cadastroPetViewModel.nomePet)
+                    TextField("Nome do pet", text: $nomePet)
                     HStack {
                         Text ("Peso do pet em kg: ")
                         Spacer()
@@ -95,7 +90,7 @@ struct CadastroPetView: View {
                 }
                 
                 Section {
-                    DatePicker("Data de nascimento", selection: $cadastroPetViewModel.dataNasc, displayedComponents: .date)
+                    DatePicker("Data de nascimento", selection: $dataNascimento, displayedComponents: .date)
                         .tint(Color("PurpleButtonTab"))
                 }
                 .listRowBackground(Color.white)
@@ -117,18 +112,18 @@ struct CadastroPetView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        cadastroPetViewModel.nomePet = nomePet
+                        cadastroPetViewModel.dataNasc = dataNascimento
                         cadastroPetViewModel.addItem(vc: viewContext)
                         dismiss()
                     } label: {
                         Text("Salvar")
                             .foregroundStyle(Color("PurpleButtonTab"))
                     }
+                    .disabled(nomePet == "")
+                    .opacity(nomePet == "" ? 0.5 : 1)
                 }
             }
         }
     }
-}
-
-#Preview {
-    CadastroPetView()
 }
