@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Consulta" representedClassName="Consulta" syncable="YES" codeGenerationType="class">
         <attribute name="dataConsulta" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="especialista" optional="YES" attributeType="String"/>
@@ -15,6 +15,14 @@
         <attribute name="resultado" optional="YES" attributeType="String"/>
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="exames" inverseEntity="Pet"/>
     </entity>
+    <entity name="Medicamento" representedClassName="Medicamento" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="horario" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="medicamento" inverseEntity="Pet"/>
+    </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES" codeGenerationType="class">
         <attribute name="castrado" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -27,6 +35,7 @@
         <attribute name="sexo" optional="YES" attributeType="String"/>
         <relationship name="consultas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Consulta" inverseName="pet" inverseEntity="Consulta"/>
         <relationship name="exames" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exame" inverseName="pet" inverseEntity="Exame"/>
+        <relationship name="medicamento" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medicamento" inverseName="pet" inverseEntity="Medicamento"/>
         <relationship name="vacinas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vacina" inverseName="pet" inverseEntity="Vacina"/>
     </entity>
     <entity name="Vacina" representedClassName="Vacina" syncable="YES" codeGenerationType="class">
@@ -37,11 +46,5 @@
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="tipoAnimal" optional="YES" attributeType="String"/>
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="vacinas" inverseEntity="Pet"/>
-    </entity>
-    <entity name="Vermifugo" representedClassName="Vermifugo" syncable="YES" codeGenerationType="class">
-        <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="nome" optional="YES" attributeType="String"/>
     </entity>
 </model>

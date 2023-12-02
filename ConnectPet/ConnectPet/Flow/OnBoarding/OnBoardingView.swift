@@ -1,15 +1,9 @@
-//
-//  OnBoardingView.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 29/11/23.
-//
 
 import SwiftUI
 
 struct OnboardingView: View {
     @Binding var onboarding: Bool
-
+    
     let corBackground = LinearGradient(gradient: Gradient(colors: [Color("Gradiente-Purple"), Color("Gradiente-Blue")]), startPoint: .leading, endPoint: .trailing)
     
     var body: some View {
@@ -17,10 +11,10 @@ struct OnboardingView: View {
             TabView(){
                 OnBoarding1()
                     .tag(0)
-
+                
                 OnBoarding2()
                     .tag(1)
-
+                
                 OnBoarding3()
                     .tag(2)
                 
@@ -31,7 +25,6 @@ struct OnboardingView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
-       }
+        }
     }
 }
-

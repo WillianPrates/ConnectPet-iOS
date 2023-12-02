@@ -7,22 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F19EA3D2B14C7B400E6FB15 /* NovaVacinaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */; };
-		6F19EA412B1612D200E6FB15 /* NovoExameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */; };
+		6F19EA3D2B14C7B400E6FB15 /* CardNovaVacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA3C2B14C7B400E6FB15 /* CardNovaVacina.swift */; };
 		6F19EA432B16157800E6FB15 /* ExameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F19EA422B16157800E6FB15 /* ExameView.swift */; };
-		6FB82BA12B1627C600B5C863 /* NovoMedicamentoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA02B1627C600B5C863 /* NovoMedicamentoCard.swift */; };
-		6FB82BA32B162A4000B5C863 /* MedicamentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA22B162A4000B5C863 /* MedicamentoView.swift */; };
-		6FB82BA52B162F5000B5C863 /* NovaConsultaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA42B162F5000B5C863 /* NovaConsultaCard.swift */; };
+		6FB82BA12B1627C600B5C863 /* CardNovoMedicamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA02B1627C600B5C863 /* CardNovoMedicamento.swift */; };
+		6FB82BA52B162F5000B5C863 /* CardNovaConsulta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA42B162F5000B5C863 /* CardNovaConsulta.swift */; };
 		6FB82BA72B16363600B5C863 /* ConsultaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA62B16363600B5C863 /* ConsultaView.swift */; };
 		6FB82BA92B1764AD00B5C863 /* CastracaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB82BA82B1764AD00B5C863 /* CastracaoView.swift */; };
 		6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3D8F42B0CF5300098A031 /* PetCard.swift */; };
-		CF795ED02B10D13D004AE085 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF795ECF2B10D13D004AE085 /* FeedView.swift */; };
+		7CE34FEC2B1AABB400E4D06B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FEB2B1AABB400E4D06B /* SplashView.swift */; };
+		7CE34FEE2B1AADA800E4D06B /* CardNovoExame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FED2B1AADA800E4D06B /* CardNovoExame.swift */; };
+		7CE34FF12B1AADDA00E4D06B /* MedicamentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FF02B1AADDA00E4D06B /* MedicamentoView.swift */; };
+		7CE34FF32B1AADF900E4D06B /* CardListaMeciamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FF22B1AADF900E4D06B /* CardListaMeciamento.swift */; };
+		7CE34FF52B1AAE1300E4D06B /* MedicamentoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FF42B1AAE1300E4D06B /* MedicamentoViewModel.swift */; };
+		7CE34FF82B1AB08C00E4D06B /* ConsultaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FF72B1AB08C00E4D06B /* ConsultaViewModel.swift */; };
+		7CE34FFB2B1AB0D600E4D06B /* CardListaConsulta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FFA2B1AB0D600E4D06B /* CardListaConsulta.swift */; };
+		7CE34FFE2B1AB1B500E4D06B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FFD2B1AB1B500E4D06B /* FeedView.swift */; };
+		7CE350002B1AB1CE00E4D06B /* CartilhaDeVacinaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34FFF2B1AB1CE00E4D06B /* CartilhaDeVacinaView.swift */; };
+		7CE350022B1AB1E400E4D06B /* HistoricoDeConsultaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE350012B1AB1E400E4D06B /* HistoricoDeConsultaView.swift */; };
+		7CE350042B1AB28700E4D06B /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE350032B1AB28700E4D06B /* MultilineTextView.swift */; };
 		CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */; };
 		EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */; };
-		EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BF3EC2B06653600520E25 /* ContentView.swift */; };
 		EF5BF3EF2B06653800520E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3EE2B06653800520E25 /* Assets.xcassets */; };
 		EF5BF3F22B06653800520E25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */; };
-		EF66BFE32B18EDF20003FF51 /* ListaExameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66BFE22B18EDF20003FF51 /* ListaExameView.swift */; };
+		EF66BFE32B18EDF20003FF51 /* CardListaExame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66BFE22B18EDF20003FF51 /* CardListaExame.swift */; };
 		EF66BFE52B18EE0C0003FF51 /* ExameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF66BFE42B18EE0C0003FF51 /* ExameViewModel.swift */; };
 		EF9A566F2B162791006A491A /* VacinaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9A566E2B162791006A491A /* VacinaViewModel.swift */; };
 		EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC5BBF32B0F8FDE0090D18A /* CadastroPetView.swift */; };
@@ -35,33 +42,40 @@
 		EFCFDA1A2B178D1B00E3C811 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA192B178D1B00E3C811 /* PerfilView.swift */; };
 		EFCFDA1C2B178D2F00E3C811 /* ListaPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA1B2B178D2F00E3C811 /* ListaPetView.swift */; };
 		EFCFDA1E2B18B54400E3C811 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA1D2B18B54400E3C811 /* PhotoPicker.swift */; };
-		EFCFDA202B18B59D00E3C811 /* ListaVacinasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA1F2B18B59D00E3C811 /* ListaVacinasView.swift */; };
+		EFCFDA202B18B59D00E3C811 /* CardListaVacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA1F2B18B59D00E3C811 /* CardListaVacinas.swift */; };
 		EFCFDA232B18B5DE00E3C811 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA222B18B5DE00E3C811 /* OnBoardingView.swift */; };
 		EFCFDA252B18B5EF00E3C811 /* OnBoarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA242B18B5EF00E3C811 /* OnBoarding1.swift */; };
 		EFCFDA272B18B60100E3C811 /* OnBoarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA262B18B60100E3C811 /* OnBoarding2.swift */; };
 		EFCFDA292B18B60800E3C811 /* OnBoarding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA282B18B60800E3C811 /* OnBoarding3.swift */; };
 		EFCFDA2B2B18B61100E3C811 /* OnBoarding4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA2A2B18B61100E3C811 /* OnBoarding4.swift */; };
-		EFCFDA2D2B18C39800E3C811 /* ConsultaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCFDA2C2B18C39800E3C811 /* ConsultaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaVacinaCard.swift; sourceTree = "<group>"; };
-		6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoExameCard.swift; sourceTree = "<group>"; };
+		6F19EA3C2B14C7B400E6FB15 /* CardNovaVacina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNovaVacina.swift; sourceTree = "<group>"; };
 		6F19EA422B16157800E6FB15 /* ExameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExameView.swift; sourceTree = "<group>"; };
-		6FB82BA02B1627C600B5C863 /* NovoMedicamentoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoMedicamentoCard.swift; sourceTree = "<group>"; };
-		6FB82BA22B162A4000B5C863 /* MedicamentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentoView.swift; sourceTree = "<group>"; };
-		6FB82BA42B162F5000B5C863 /* NovaConsultaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaConsultaCard.swift; sourceTree = "<group>"; };
+		6FB82BA02B1627C600B5C863 /* CardNovoMedicamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNovoMedicamento.swift; sourceTree = "<group>"; };
+		6FB82BA42B162F5000B5C863 /* CardNovaConsulta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNovaConsulta.swift; sourceTree = "<group>"; };
 		6FB82BA62B16363600B5C863 /* ConsultaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaView.swift; sourceTree = "<group>"; };
 		6FB82BA82B1764AD00B5C863 /* CastracaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastracaoView.swift; sourceTree = "<group>"; };
 		6FF3D8F42B0CF5300098A031 /* PetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCard.swift; sourceTree = "<group>"; };
-		CF795ECF2B10D13D004AE085 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = SOURCE_ROOT; };
+		7CE34FEB2B1AABB400E4D06B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7CE34FED2B1AADA800E4D06B /* CardNovoExame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNovoExame.swift; sourceTree = "<group>"; };
+		7CE34FF02B1AADDA00E4D06B /* MedicamentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentoView.swift; sourceTree = "<group>"; };
+		7CE34FF22B1AADF900E4D06B /* CardListaMeciamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaMeciamento.swift; sourceTree = "<group>"; };
+		7CE34FF42B1AAE1300E4D06B /* MedicamentoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentoViewModel.swift; sourceTree = "<group>"; };
+		7CE34FF72B1AB08C00E4D06B /* ConsultaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaViewModel.swift; sourceTree = "<group>"; };
+		7CE34FFA2B1AB0D600E4D06B /* CardListaConsulta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaConsulta.swift; sourceTree = "<group>"; };
+		7CE34FFD2B1AB1B500E4D06B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		7CE34FFF2B1AB1CE00E4D06B /* CartilhaDeVacinaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartilhaDeVacinaView.swift; sourceTree = "<group>"; };
+		7CE350012B1AB1E400E4D06B /* HistoricoDeConsultaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoDeConsultaView.swift; sourceTree = "<group>"; };
+		7CE350032B1AB28700E4D06B /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
+		7CE350052B1AB4A900E4D06B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilPetView.swift; path = ConnectPet/Flow/BoasVindas/PerfilPetView.swift; sourceTree = SOURCE_ROOT; };
 		EF5BF3E72B06653600520E25 /* ConnectPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPetApp.swift; sourceTree = "<group>"; };
-		EF5BF3EC2B06653600520E25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF5BF3EE2B06653800520E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF5BF3F12B06653800520E25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF66BFE22B18EDF20003FF51 /* ListaExameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaExameView.swift; sourceTree = "<group>"; };
+		EF66BFE22B18EDF20003FF51 /* CardListaExame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaExame.swift; sourceTree = "<group>"; };
 		EF66BFE42B18EE0C0003FF51 /* ExameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExameViewModel.swift; sourceTree = "<group>"; };
 		EF9A566E2B162791006A491A /* VacinaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacinaViewModel.swift; sourceTree = "<group>"; };
 		EF9A56702B1627AD006A491A /* ConnectPet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConnectPet.entitlements; sourceTree = "<group>"; };
@@ -75,13 +89,12 @@
 		EFCFDA192B178D1B00E3C811 /* PerfilView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		EFCFDA1B2B178D2F00E3C811 /* ListaPetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaPetView.swift; sourceTree = "<group>"; };
 		EFCFDA1D2B18B54400E3C811 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
-		EFCFDA1F2B18B59D00E3C811 /* ListaVacinasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaVacinasView.swift; sourceTree = "<group>"; };
+		EFCFDA1F2B18B59D00E3C811 /* CardListaVacinas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaVacinas.swift; sourceTree = "<group>"; };
 		EFCFDA222B18B5DE00E3C811 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		EFCFDA242B18B5EF00E3C811 /* OnBoarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1.swift; sourceTree = "<group>"; };
 		EFCFDA262B18B60100E3C811 /* OnBoarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2.swift; sourceTree = "<group>"; };
 		EFCFDA282B18B60800E3C811 /* OnBoarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3.swift; sourceTree = "<group>"; };
 		EFCFDA2A2B18B61100E3C811 /* OnBoarding4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4.swift; sourceTree = "<group>"; };
-		EFCFDA2C2B18C39800E3C811 /* ConsultaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +111,91 @@
 		6FF3D8F32B0CF5110098A031 /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
-				6FF3D8F42B0CF5300098A031 /* PetCard.swift */,
-				6F19EA402B1612D200E6FB15 /* NovoExameCard.swift */,
-				6FB82BA02B1627C600B5C863 /* NovoMedicamentoCard.swift */,
-				6FB82BA42B162F5000B5C863 /* NovaConsultaCard.swift */,
+				7CE350032B1AB28700E4D06B /* MultilineTextView.swift */,
 			);
 			path = Componentes;
+			sourceTree = "<group>";
+		};
+		7CE34FEF2B1AADC800E4D06B /* Medicamento */ = {
+			isa = PBXGroup;
+			children = (
+				7CE34FF02B1AADDA00E4D06B /* MedicamentoView.swift */,
+				7CE34FF42B1AAE1300E4D06B /* MedicamentoViewModel.swift */,
+				7CE350082B1ABA7800E4D06B /* Componente */,
+			);
+			path = Medicamento;
+			sourceTree = "<group>";
+		};
+		7CE34FF62B1AB07300E4D06B /* Consulta */ = {
+			isa = PBXGroup;
+			children = (
+				6FB82BA62B16363600B5C863 /* ConsultaView.swift */,
+				7CE34FF72B1AB08C00E4D06B /* ConsultaViewModel.swift */,
+				7CE350072B1ABA3700E4D06B /* Componente */,
+			);
+			path = Consulta;
+			sourceTree = "<group>";
+		};
+		7CE34FF92B1AB0B000E4D06B /* Castracao */ = {
+			isa = PBXGroup;
+			children = (
+				6FB82BA82B1764AD00B5C863 /* CastracaoView.swift */,
+			);
+			path = Castracao;
+			sourceTree = "<group>";
+		};
+		7CE34FFC2B1AB1A200E4D06B /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				7CE34FFD2B1AB1B500E4D06B /* FeedView.swift */,
+				7CE350012B1AB1E400E4D06B /* HistoricoDeConsultaView.swift */,
+				7CE34FFF2B1AB1CE00E4D06B /* CartilhaDeVacinaView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		7CE350062B1AB9E100E4D06B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				7CE34FEB2B1AABB400E4D06B /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		7CE350072B1ABA3700E4D06B /* Componente */ = {
+			isa = PBXGroup;
+			children = (
+				7CE34FFA2B1AB0D600E4D06B /* CardListaConsulta.swift */,
+				6FB82BA42B162F5000B5C863 /* CardNovaConsulta.swift */,
+			);
+			path = Componente;
+			sourceTree = "<group>";
+		};
+		7CE350082B1ABA7800E4D06B /* Componente */ = {
+			isa = PBXGroup;
+			children = (
+				6FB82BA02B1627C600B5C863 /* CardNovoMedicamento.swift */,
+				7CE34FF22B1AADF900E4D06B /* CardListaMeciamento.swift */,
+			);
+			path = Componente;
+			sourceTree = "<group>";
+		};
+		7CE350092B1ABABB00E4D06B /* Componente */ = {
+			isa = PBXGroup;
+			children = (
+				EF66BFE22B18EDF20003FF51 /* CardListaExame.swift */,
+				7CE34FED2B1AADA800E4D06B /* CardNovoExame.swift */,
+			);
+			path = Componente;
+			sourceTree = "<group>";
+		};
+		7CE3500A2B1ABB2700E4D06B /* Componente */ = {
+			isa = PBXGroup;
+			children = (
+				EFCFDA1F2B18B59D00E3C811 /* CardListaVacinas.swift */,
+				6F19EA3C2B14C7B400E6FB15 /* CardNovaVacina.swift */,
+			);
+			path = Componente;
 			sourceTree = "<group>";
 		};
 		EF5BF3DE2B06653600520E25 = {
@@ -125,18 +217,14 @@
 		EF5BF3E92B06653600520E25 /* ConnectPet */ = {
 			isa = PBXGroup;
 			children = (
+				7CE350052B1AB4A900E4D06B /* Info.plist */,
 				EF9A56702B1627AD006A491A /* ConnectPet.entitlements */,
-				EF5BF4002B079CFD00520E25 /* Persistence */,
-				EF5BF3F92B06B01C00520E25 /* Flow */,
-				EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */,
-				6FB82BA62B16363600B5C863 /* ConsultaView.swift */,
-				EFCFDA2C2B18C39800E3C811 /* ConsultaViewModel.swift */,
-				6FB82BA82B1764AD00B5C863 /* CastracaoView.swift */,
-				6FB82BA22B162A4000B5C863 /* MedicamentoView.swift */,
-				EF5BF3EC2B06653600520E25 /* ContentView.swift */,
-				6FF3D8F32B0CF5110098A031 /* Componentes */,
 				EFCC117F2B0CF9D100353DEB /* ConnectPet.xcdatamodeld */,
 				EF5BF3EE2B06653800520E25 /* Assets.xcassets */,
+				EF5BF3EA2B06653600520E25 /* ConnectPetApp.swift */,
+				EF5BF3F92B06B01C00520E25 /* Flow */,
+				EF5BF4002B079CFD00520E25 /* Persistence */,
+				6FF3D8F32B0CF5110098A031 /* Componentes */,
 				EF5BF3F02B06653800520E25 /* Preview Content */,
 			);
 			path = ConnectPet;
@@ -153,11 +241,12 @@
 		EF5BF3F92B06B01C00520E25 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				7CE350062B1AB9E100E4D06B /* Splash */,
+				7CE34FFC2B1AB1A200E4D06B /* Feed */,
 				EFCFDA212B18B5CC00E3C811 /* OnBoarding */,
 				EF5BF3FF2B06B09400520E25 /* CadastroPet */,
 				EF5BF3FE2B06B08400520E25 /* PerfilPet */,
 				EF5BF3FD2B06B06F00520E25 /* Perfil */,
-				EF5BF3FC2B06B05900520E25 /* Feed */,
 				EF5BF3FB2B06B03400520E25 /* ListaPets */,
 				EF5BF3FA2B06B02500520E25 /* TabBar */,
 			);
@@ -175,17 +264,10 @@
 		EF5BF3FB2B06B03400520E25 /* ListaPets */ = {
 			isa = PBXGroup;
 			children = (
+				6FF3D8F42B0CF5300098A031 /* PetCard.swift */,
 				EFCFDA1B2B178D2F00E3C811 /* ListaPetView.swift */,
 			);
 			path = ListaPets;
-			sourceTree = "<group>";
-		};
-		EF5BF3FC2B06B05900520E25 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				CF795ECF2B10D13D004AE085 /* FeedView.swift */,
-			);
-			path = Feed;
 			sourceTree = "<group>";
 		};
 		EF5BF3FD2B06B06F00520E25 /* Perfil */ = {
@@ -200,9 +282,12 @@
 		EF5BF3FE2B06B08400520E25 /* PerfilPet */ = {
 			isa = PBXGroup;
 			children = (
+				CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */,
+				7CE34FF92B1AB0B000E4D06B /* Castracao */,
+				7CE34FF62B1AB07300E4D06B /* Consulta */,
+				7CE34FEF2B1AADC800E4D06B /* Medicamento */,
 				EF66BFE12B18EDDF0003FF51 /* Exame */,
 				EF9A566D2B1626DD006A491A /* Vacina */,
-				CFF7CEED2B0E38B300622BBF /* PerfilPetView.swift */,
 			);
 			path = PerfilPet;
 			sourceTree = "<group>";
@@ -229,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				6F19EA422B16157800E6FB15 /* ExameView.swift */,
-				EF66BFE22B18EDF20003FF51 /* ListaExameView.swift */,
 				EF66BFE42B18EE0C0003FF51 /* ExameViewModel.swift */,
+				7CE350092B1ABABB00E4D06B /* Componente */,
 			);
 			path = Exame;
 			sourceTree = "<group>";
@@ -238,10 +323,9 @@
 		EF9A566D2B1626DD006A491A /* Vacina */ = {
 			isa = PBXGroup;
 			children = (
-				6F19EA3C2B14C7B400E6FB15 /* NovaVacinaCard.swift */,
-				EF9A566E2B162791006A491A /* VacinaViewModel.swift */,
-				EFCFDA1F2B18B59D00E3C811 /* ListaVacinasView.swift */,
 				EFCFDA172B178C1500E3C811 /* VacinaView.swift */,
+				EF9A566E2B162791006A491A /* VacinaViewModel.swift */,
+				7CE3500A2B1ABB2700E4D06B /* Componente */,
 			);
 			path = Vacina;
 			sourceTree = "<group>";
@@ -330,37 +414,43 @@
 			files = (
 				EF9A566F2B162791006A491A /* VacinaViewModel.swift in Sources */,
 				EFCFDA1A2B178D1B00E3C811 /* PerfilView.swift in Sources */,
-				6F19EA412B1612D200E6FB15 /* NovoExameCard.swift in Sources */,
 				EFCFDA232B18B5DE00E3C811 /* OnBoardingView.swift in Sources */,
+				7CE350022B1AB1E400E4D06B /* HistoricoDeConsultaView.swift in Sources */,
+				7CE350042B1AB28700E4D06B /* MultilineTextView.swift in Sources */,
+				7CE34FFB2B1AB0D600E4D06B /* CardListaConsulta.swift in Sources */,
 				6FF3D8F52B0CF5300098A031 /* PetCard.swift in Sources */,
 				EFCFDA292B18B60800E3C811 /* OnBoarding3.swift in Sources */,
-				EFCFDA2D2B18C39800E3C811 /* ConsultaViewModel.swift in Sources */,
 				6FB82BA92B1764AD00B5C863 /* CastracaoView.swift in Sources */,
-				6FB82BA52B162F5000B5C863 /* NovaConsultaCard.swift in Sources */,
+				6FB82BA52B162F5000B5C863 /* CardNovaConsulta.swift in Sources */,
+				7CE34FF32B1AADF900E4D06B /* CardListaMeciamento.swift in Sources */,
 				EFC5BBF42B0F8FDF0090D18A /* CadastroPetView.swift in Sources */,
 				CFF7CEEE2B0E38B300622BBF /* PerfilPetView.swift in Sources */,
 				EFCFDA2B2B18B61100E3C811 /* OnBoarding4.swift in Sources */,
 				EFCC11852B0CFA1600353DEB /* ConnectPet.xcdatamodeld in Sources */,
-				EFCFDA202B18B59D00E3C811 /* ListaVacinasView.swift in Sources */,
-				CF795ED02B10D13D004AE085 /* FeedView.swift in Sources */,
+				EFCFDA202B18B59D00E3C811 /* CardListaVacinas.swift in Sources */,
 				EFCFDA1C2B178D2F00E3C811 /* ListaPetView.swift in Sources */,
 				EFCC11872B0CFC0300353DEB /* Persistence.swift in Sources */,
+				7CE34FFE2B1AB1B500E4D06B /* FeedView.swift in Sources */,
 				EFCFDA272B18B60100E3C811 /* OnBoarding2.swift in Sources */,
 				EFC5BBF82B10D1A80090D18A /* EnumCadastroPet.swift in Sources */,
 				EFC5BBF62B0F8FEA0090D18A /* CadastroPetViewModel.swift in Sources */,
-				EF66BFE32B18EDF20003FF51 /* ListaExameView.swift in Sources */,
-				6FB82BA32B162A4000B5C863 /* MedicamentoView.swift in Sources */,
+				EF66BFE32B18EDF20003FF51 /* CardListaExame.swift in Sources */,
+				7CE34FF82B1AB08C00E4D06B /* ConsultaViewModel.swift in Sources */,
 				EFCFDA182B178C1500E3C811 /* VacinaView.swift in Sources */,
-				EF5BF3ED2B06653600520E25 /* ContentView.swift in Sources */,
+				7CE34FEC2B1AABB400E4D06B /* SplashView.swift in Sources */,
 				EFC5BBFA2B10D2290090D18A /* TabBarView.swift in Sources */,
 				EF5BF3EB2B06653600520E25 /* ConnectPetApp.swift in Sources */,
-				6F19EA3D2B14C7B400E6FB15 /* NovaVacinaCard.swift in Sources */,
+				6F19EA3D2B14C7B400E6FB15 /* CardNovaVacina.swift in Sources */,
 				6FB82BA72B16363600B5C863 /* ConsultaView.swift in Sources */,
+				7CE34FEE2B1AADA800E4D06B /* CardNovoExame.swift in Sources */,
 				EF66BFE52B18EE0C0003FF51 /* ExameViewModel.swift in Sources */,
 				EFCFDA252B18B5EF00E3C811 /* OnBoarding1.swift in Sources */,
-				6FB82BA12B1627C600B5C863 /* NovoMedicamentoCard.swift in Sources */,
+				6FB82BA12B1627C600B5C863 /* CardNovoMedicamento.swift in Sources */,
+				7CE34FF52B1AAE1300E4D06B /* MedicamentoViewModel.swift in Sources */,
 				EFCFDA1E2B18B54400E3C811 /* PhotoPicker.swift in Sources */,
+				7CE34FF12B1AADDA00E4D06B /* MedicamentoView.swift in Sources */,
 				6F19EA432B16157800E6FB15 /* ExameView.swift in Sources */,
+				7CE350002B1AB1CE00E4D06B /* CartilhaDeVacinaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,12 +585,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ConnectPet/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2PXPDK4KWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConnectPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -526,12 +616,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ConnectPet/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2PXPDK4KWL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConnectPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

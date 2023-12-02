@@ -1,20 +1,8 @@
-//
-//  CadastroPetViewModel.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 22/11/23.
-//
 
 import SwiftUI
 import CoreData
 
 class CadastroPetViewModel: ObservableObject {
-    
-    // MARK: - Fetch
-    
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Pet.id, ascending: true)],
-        animation: .default) var pets: FetchedResults<Pet>
     
     // MARK: - Publishers
     
@@ -40,6 +28,7 @@ class CadastroPetViewModel: ObservableObject {
             newPet.sexo = sexo.title
             newPet.pelagem = pelagem.title
             newPet.castrado = castrado
+            newPet.dataNascimento = dataNasc
             
             if (newPet.especie == "Cachorro"){
                 newPet.raca = String(racaCachorro.title)
@@ -60,7 +49,7 @@ class CadastroPetViewModel: ObservableObject {
         }
     }
     
-    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext) {
+    func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, pets: FetchedResults<Pet>) {
         withAnimation {
             offsets.map { pets[$0] }.forEach(vc.delete)
 

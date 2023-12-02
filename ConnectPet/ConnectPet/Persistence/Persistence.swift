@@ -1,9 +1,3 @@
-//
-//  Persistence.swift
-//  AppSuperTest
-//
-//  Created by Foundastion03 on 21/11/23.
-//
 
 import CoreData
 

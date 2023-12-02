@@ -1,13 +1,7 @@
-//
-//  NovoExameCard.swift
-//  ConnectPet
-//
-//  Created by Foundation02 on 28/11/23.
-//
 
 import SwiftUI
 
-struct NovoExameCard: View {
+struct CardNovoExame: View {
     @Binding var nomeExame: String
     @Binding var descricaoExame: String
     @Binding var resultadoExame: String
@@ -17,7 +11,7 @@ struct NovoExameCard: View {
         List {
             Section(header: Text("Adicionar Novo Exame")) {
                 HStack {
-                    Text("Nome do Exame")
+                    Text("Nome do Exame:")
                         .frame(maxWidth: 145, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     

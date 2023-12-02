@@ -1,9 +1,3 @@
-//
-//  ExameViewModel.swift
-//  ConnectPet
-//
-//  Created by Foundastion03 on 30/11/23.
-//
 
 import SwiftUI
 import CoreData
@@ -26,7 +20,7 @@ class ExameViewModel: ObservableObject {
             newExame.descricao = descricaoExame
             newExame.resultado = resultadoExame
             newExame.data = dataExame
-            //newExame.pet = pet
+            newExame.pet = pet
             
             do {
                 try vc.save()
@@ -42,7 +36,7 @@ class ExameViewModel: ObservableObject {
     func deleteItems(offsets: IndexSet, vc: NSManagedObjectContext, exames: FetchedResults<Exame>) {
         withAnimation {
             offsets.map { exames[$0] }.forEach(vc.delete)
-
+            
             do {
                 try vc.save()
             } catch {
@@ -51,5 +45,4 @@ class ExameViewModel: ObservableObject {
             }
         }
     }
-    
 }
