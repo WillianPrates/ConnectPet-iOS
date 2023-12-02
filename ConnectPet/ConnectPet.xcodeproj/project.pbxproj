@@ -247,7 +247,7 @@
 				EF5BF3FF2B06B09400520E25 /* CadastroPet */,
 				EF5BF3FE2B06B08400520E25 /* PerfilPet */,
 				EF5BF3FD2B06B06F00520E25 /* Perfil */,
-				EF5BF3FB2B06B03400520E25 /* ListaPets */,
+				EF5BF3FB2B06B03400520E25 /* Pets */,
 				EF5BF3FA2B06B02500520E25 /* TabBar */,
 			);
 			path = Flow;
@@ -261,13 +261,13 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		EF5BF3FB2B06B03400520E25 /* ListaPets */ = {
+		EF5BF3FB2B06B03400520E25 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
 				6FF3D8F42B0CF5300098A031 /* PetCard.swift */,
 				EFCFDA1B2B178D2F00E3C811 /* ListaPetView.swift */,
 			);
-			path = ListaPets;
+			path = Pets;
 			sourceTree = "<group>";
 		};
 		EF5BF3FD2B06B06F00520E25 /* Perfil */ = {

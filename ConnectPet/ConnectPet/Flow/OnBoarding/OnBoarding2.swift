@@ -8,7 +8,7 @@ struct OnBoarding2: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 281, height: 399)
-            Text("Registre o histórico de saúde do seu pet de forma simples e organizada")
+            Text("Registre as vacinas, medicamentos, exames e consultas do seu pet")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(.corTexto)
                 .frame(width: 250)
